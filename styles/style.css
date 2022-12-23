@@ -12,15 +12,16 @@ body{
     background-color: #9BC4BC;
 }
 #pickerCard{
-    width: 40%;
-    height: 600px;
+    height: 200px;
+    width: 30%;
     background-color: #D3FFE9;
     border: #4B5043;
     border-width: 2px;
     border-style: solid;
     position: absolute;
     margin-top: 200px;
-    margin-left: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -45,15 +46,15 @@ a{
     margin-right: 20px;
 }
 #cardDiv{
-    height: 20px;
+    height: 40px;
     display: flex;
     flex-direction: column;
-    margin-top: 2px;
-    background-color: #9BC4BC;
+    margin-right: 2px;
 }
 #logoHeader{
     height: 50px;
     width: 50px;
+    border-radius: 50%;
     margin-right: 20px;
     margin-left: 20px;
 }
@@ -64,4 +65,29 @@ a{
 }
 h1{
     color: #D3FFE9;
+}
+#inputText{
+    border: none;
+    border-bottom: 2px solid #4B5043;
+    font-size: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 8px;
+    background-color: transparent;
+}
+#inputText:focus{
+    outline: none;
+}
+#searchButton{
+    font-size: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+    background-color: #9BC4BC;
+    transition: 1s all;
+
+}
+#searchButton:hover{
+    background-color:#6b817d ;
+    box-shadow: 0px 0px 0px 0px transparent;
 }
