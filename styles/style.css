@@ -9,7 +9,7 @@
 }
 body{
     margin:0;
-    background-color: #9BC4BC;
+    background-color: transparent;
 }
 #pickerCard{
     height: 200px;
@@ -36,7 +36,6 @@ ul{
 }
 li{
     display: inline-block;
-    height: 50px;
 }
 a{
     color: #D3FFE9;
@@ -90,4 +89,13 @@ h1{
 #searchButton:hover{
     background-color:#6b817d ;
     box-shadow: 0px 0px 0px 0px transparent;
+    cursor:pointer;
 }
+#googleMaps{
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
