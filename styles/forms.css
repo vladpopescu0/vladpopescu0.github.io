@@ -1,3 +1,6 @@
+/* TODO: import nord somehow */
+/* @import "node_modules/nord/src/nord.css"; */
+
 #login-block-wrapper {
     height: 70vh;
     width: 60vw;
@@ -9,13 +12,13 @@
     position: relative;
     padding-top: 3vh;
     width: 100%;
-    height: 50%;
+    height: 55%;
 }
 
 #login-title {
     text-align: center;
     font-size: 4vw;
-    color: antiquewhite;
+    color: #E5E9F0;
 }
 
 #login-form-wrapper {
@@ -29,46 +32,83 @@
     width: 100%;
     /* height: 100%; */
     font-size: 1.5vw;
+    font-family: 'Sofia Sans', sans-serif;
     text-align: center;
     align-items: center;
     vertical-align: middle;
-    color: antiquewhite;
+    color: #E5E9F0;
 }
 
 .form label {
     position: relative;
     margin-top: 4%;
-    margin-bottom: 4%;
+    margin-bottom: 2%;
 }
 
 .form input {
     position: relative;
     font-size: 1.5vw;
-    margin-top: 4%;
+    margin-top: 2%;
     margin-bottom: 4%;
-    width: 70%;
+    width: 60%;
     height: 50%;
-    border-radius: 1vh;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 1%;
-    padding-right: 1%;
+
+    border-radius: 30px;
     border-width: 3px;
-    border-color: rgb(109, 199, 102);
-    background-color: antiquewhite;
+    border-color: #A3BE8C;
+    
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+
+    background-color: #E5E9F0;
     transition: linear 0.1s;
 }
 
 .form input:hover {
     border-width: 5px;
+    border-color: #B48EAD;
+
 }
 
 .form input:focus {
-    border-width: 5px;
+    border-width: 7px;
+    border-color: #B48EAD;
 }
 
 .form button {
-    background-color: rebeccapurple;
+    color: #E5E9F0;
+    font-size: 1.5vw;
+    font-family: 'Sofia Sans', sans-serif;
+
+    padding: 3%;
+    margin-top: 7%;
+
+    width: 30%;
+    height: 10%;
+
+    border-radius: 30px;
+    border-width: 0px;
+    background-color: #A3BE8C;
+
+    transition: ease-in-out 0.2s;
+}
+
+.form button:hover {
+    background-color: #B48EAD;
+}
+
+.text-link {
+    position: relative;
+    font-size: 1.1vw;
+    color: #d8dee9d4;
+    transition: linear 0.2s;
+}
+
+.text-link:hover {
+    color: #B48EAD;
+    text-decoration: underline;
 }
 
 .centered-outer-container {
