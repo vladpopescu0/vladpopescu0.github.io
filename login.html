@@ -34,28 +34,38 @@
             </ul>
         </header>
 
-        <div id="login-block-wrapper" class="centered-outer-container">
-            <div id="login-title">Welcome back to CarYa!</div>
-            <div id="login-wrapper" >
-                <div id="login-form-wrapper" class="centered-container">
-                    <form action="/account.html" class="form" style="margin-top: 3vh;">
-                        <label for="uname">Enter your username:</label><br>
-                        <input type="text" id="uname" name="username"><br>
-            
-                        <label for="pw">Enter your password:</label><br>
-                        <input type="text" name="password" id="pw"><br>
-        
-                        <a id="forget" class="text-link" href="./forget.html" style="margin-top: -5%;">Forgot your password?</a><br>
-
-                        <button type="submit"> Log In </button>
-                    </form>
+        <div id="login-signup-wrapper">
+            <div id="signup-background">
+                <div id="signup-block-wrapper" class="centered-container">
+                    <h1 id="signup-h1" style="margin-bottom: -3%;">Don't have an account yet?</h1><br>
+                    <h2 id="signup-h2">Join us now!</h2><br>
+                    <a id="signup-button" class="button" href="./signup.html">Sign Up</a>
                 </div>
             </div>
-
-            <div id="forget-wrapper" style="text-align: center;">
+            
+            <div id="login-background">
+                <div id="login-block-wrapper" class="centered-container">
+                    <div id="login-title">Welcome back to CarYa!</div>
+                    <div id="login-wrapper" >
+                        <div id="login-form-wrapper" class="centered-container">
+                            <form action="/account.html" class="form" style="margin-top: 3vh;">
+                                <label for="uname">Enter your username:</label><br>
+                                <input type="text" id="uname" name="username"><br>
+                    
+                                <label for="pw">Enter your password:</label><br>
+                                <input type="text" name="password" id="pw"><br>
+                
+                                <a id="forget" class="text-link" href="./forget.html" style="margin-top: -5%;">Forgot your password?</a><br>
+        
+                                <button type="submit"> Log In </button>
+                            </form>
+                        </div>
+                    </div>
+        
+                    <div id="forget-wrapper" style="text-align: center;">
+                    </div>
+                </div>
             </div>
-
         </div>
-
     </body>
 </html>

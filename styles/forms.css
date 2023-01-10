@@ -1,11 +1,64 @@
 /* TODO: import nord somehow */
 /* @import "node_modules/nord/src/nord.css"; */
+#login-signup-wrapper {
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+    height: 92vh;
+}
+
+#login-background {
+    position: absolute;
+    right: 0px;
+    width: 50%;
+    height: 100%;
+}
+
+#signup-background {
+    position: absolute;
+    left: 0px;
+    width: 50%;
+    height: 100%;
+    background-image: url(../resources/map7_1480x800.webp);
+    background-position: left;
+    background-size: cover;
+}
+
+#signup-block-wrapper {
+    height: 40%;
+    width: 100%;
+    background-color:#2e344094;
+    text-align: center;
+    vertical-align: middle;
+    /* font-size: 1.3vw; */
+}
+
+#signup-block-wrapper h1 {
+    font-size: 3vw;
+    color: #E5E9F0;
+}
+
+#signup-block-wrapper h2 {
+    font-size: 2vw;
+    color: #E5E9F0;
+}
+
+#signup-button {
+    position: relative;
+    font-size: 1.5vw;
+    color: #2E3440;
+    background-color: #81A1C1;
+    padding: 2% 10% 2% 10%;
+    margin-top: 7%;
+}
+
+#signup-button:hover {
+    background-color: #A3BE8C;
+}
 
 #login-block-wrapper {
-    height: 70vh;
-    width: 60vw;
-    background-color: transparent;
-    /* font-size: 1.3vw; */
+    height: 60vh;
+    width: 100%;
 }
 
 #login-wrapper {
@@ -124,3 +177,20 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.vertical-centered-container {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+.button {
+    font-family: 'Sofia Sans', sans-serif;
+
+    
+
+    border-radius: 30px;
+    border-width: 0px;
+    transition: ease-in-out 0.2s;
+}
+

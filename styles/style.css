@@ -3,7 +3,7 @@
     position: fixed;
     display: flex;
     justify-content: space-between;
-    min-height: 50px;
+    min-height: 8vh;
     background-color: #4B5043;
     z-index: 300;
 }
