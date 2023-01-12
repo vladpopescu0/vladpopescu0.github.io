@@ -53,11 +53,6 @@
     align-items:baseline;
 }
 
-#signup-form div {
-    /* background-color: aqua; */
-    /* box-sizing: border-box; */
-}
-
 #signup-form input, #signup-form textarea {
     width: 100%;
     margin-top: 2%;
