@@ -1,20 +1,22 @@
 #headerId{
+    color: #2E3440;
     min-width: 100%;
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     height: 8vh;
     background-color: #A3BE8C;
     z-index: 300;
-<<<<<<< HEAD
     font-family: 'Sofia Sans', sans-serif;
-=======
     top: 0;
 }
 
 #headerId h1 {
     font-size: 2vw;
->>>>>>> 1f1a0c30e405d583dd062748f397691282824ea5
+}
+
+#headerId h2 {
+    color: #2E3440;
 }
 
 body{
@@ -45,11 +47,17 @@ li{
     display: inline-block;
 }
 a{
-    color: #D3FFE9;
+    color: #2E3440;
     font-size: 20px;
     text-decoration: none;
     margin-left: 20px;
     margin-right: 20px;
+    transition: linear 0.1s;
+}
+
+a:hover {
+    color: #ECEFF4;
+    text-decoration: underline;
 }
 #cardDiv{
     height: 40px;
