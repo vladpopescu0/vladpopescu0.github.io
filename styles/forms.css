@@ -19,9 +19,10 @@
     margin-bottom: 2%;
 }
 
-.form input {
+.form input, .form textarea {
     position: relative;
-    font-size: 1.5vw;
+    font-size: 1.3vw;
+    font-family: 'Sofia Sans', sans-serif;
 
     border-radius: 30px;
     border-width: 3px;
@@ -33,13 +34,13 @@
     transition: linear 0.1s;
 }
 
-.form input:hover {
+.form input:hover, .form textarea:hover {
     border-width: 5px;
     border-color: #B48EAD;
 
 }
 
-.form input:focus {
+.form input:focus, .form textarea:focus {
     border-width: 7px;
     border-color: #B48EAD;
 }

@@ -21,22 +21,16 @@
 #signup-half {
     height: 100%; 
     background-color: #2E3440;
-    flex-basis: 65%;
+    flex-basis: 60%;
     display: flex;
     flex-direction: column;
-}
-
-#image-half {
-    height: 100%; 
-    flex-grow: 1;
-    background-color: antiquewhite;
 }
 
 #signup-form-wrapper {
     position: relative;
     text-align: center;
     width: 100%;
-    flex-basis: 85%;
+    flex-basis: 80%;
     box-sizing: border-box;
     /* background-color: grey; */
 }
@@ -48,10 +42,10 @@
     height: 100%;
     /* background-color: black; */
     display: grid;
-    grid-template-columns:  1fr 1fr 1fr 1fr 4fr;
-    grid-template-rows:     1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns:  1fr 1fr 2fr;
+    grid-template-rows:     1fr 1fr 1fr 1fr 1fr;
     column-gap: 3%;
-    row-gap: 3%;
+    /* row-gap: 3%; */
     padding-left: 4%;
     padding-right: 4%;
     padding-bottom: 4%;
@@ -61,13 +55,41 @@
 
 #signup-form div {
     /* background-color: aqua; */
+    /* box-sizing: border-box; */
+}
+
+#signup-form input, #signup-form textarea {
+    width: 100%;
+    margin-top: 2%;
+    /* margin-left: 2%; */
+    /* margin-right: 2%; */
+    padding: 3%;
+    height: 6vh;
     box-sizing: border-box;
 }
 
-#signup-form input {
+#driver-half {
+    height: 100%; 
+    flex-grow: 1;
+    background-color: #4C566A;
+    display: flex;
+    flex-direction: column;
+}
+
+#driver-form-wrapper {
+    position: relative;
+    text-align: center;
     width: 100%;
-    margin-top: 2%;
+    flex-basis: 85%;
+    box-sizing: border-box;
+    /* background-color: grey; */
+}
+
+#password-form input {
+    width: 100%;
+    margin-top: 4%;
+    margin-bottom: 4%;
     padding: 2%;
-    height: 5vh;
+    height: 6vh;
     box-sizing: border-box;
 }

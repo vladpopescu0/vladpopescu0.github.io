@@ -3,11 +3,20 @@
     position: absolute;
     display: flex;
     justify-content: space-between;
-    min-height: 8vh;
-    background-color: #4B5043;
+    height: 8vh;
+    background-color: #A3BE8C;
     z-index: 300;
+<<<<<<< HEAD
     font-family: 'Sofia Sans', sans-serif;
+=======
+    top: 0;
 }
+
+#headerId h1 {
+    font-size: 2vw;
+>>>>>>> 1f1a0c30e405d583dd062748f397691282824ea5
+}
+
 body{
     margin:0;
     background-color: #2e344094;

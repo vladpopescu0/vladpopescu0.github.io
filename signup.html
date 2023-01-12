@@ -16,11 +16,11 @@
         <title>CarYa - Signup</title>
 
         <style>
-        body {
-            background-color:#2E3440;
-            font-family: 'Sofia Sans', sans-serif;
-            overflow-x: hidden;
-        } 
+            body {
+                background-color:#2E3440;
+                font-family: 'Sofia Sans', sans-serif;
+                overflow-x: hidden;
+            } 
         </style>
     </head>
     <body> 
@@ -31,7 +31,7 @@
             </div>
             <ul>
                 <li><a href="./index.html">Home</a></li>
-                <li><a href="./login.html" target="_blank">Log In</a></li>
+                <li><a href="./login.html">Log In</a></li>
                 <li><a href="https://www.youtube.com/watch?v=S9bCLPwzSC0" target="_blank">Contact</a></li>
                 <li><a href="https://www.youtube.com/watch?v=cc2niaAcxaE" target="_blank">About</a></li>
             </ul>
@@ -40,61 +40,60 @@
 
         <div id="mainscreen" style="background:transparent; max-width: 100vw; 
         height: 100vh; overflow-y: scroll; overflow-x: hidden; transform: linear 1s;">
-            <div id="screen1">
+            <div id="signup-screen">
                 <div id="signup-wrapper">
                     <div id="signup-half">
                         <h1 style="margin-top: 5%; flex-shrink: 1;">Create an account</h1>
                         <div id="signup-form-wrapper" >
-                            <form id="signup-form" action="#screen2" class="form">
+                            <form id="signup-form" action="#password-screen" class="form">
                                 <!-- left column -->
-                                <div style="grid-column-start:1; grid-column-end:5; grid-row-start: 1; grid-row-end: 2;">
+                                <div style="grid-column-start:1; grid-column-end:3; grid-row-start: 1; grid-row-end: 2;">
                                     <label for="uname">Username: </label><br>
                                     <input type="text" id="username" name="uname"><br>
                                 </div>
 
-                                <div style="grid-column-start:1; grid-column-end:3; grid-row-start: 2; grid-row-end: 3;">
+                                <div style="grid-column-start:1; grid-column-end:2; grid-row-start: 2; grid-row-end: 3;">
                                     <label for="name">First Name: </label><br>
                                     <input type="text" name="name" id="name"><br>
                                 </div>
 
-                                <div style="grid-column-start:3; grid-column-end:5; grid-row-start: 2; grid-row-end: 3;">
+                                <div style="grid-column-start:2; grid-column-end:3; grid-row-start: 2; grid-row-end: 3;">
                                     <label for="name">Last Name: </label><br>
                                     <input type="text" name="name" id="name"><br>
                                 </div>
                                 
-                                <div style="grid-column-start:1; grid-column-end:5; grid-row-start: 3; grid-row-end: 4;">
+                                <div style="grid-column-start:1; grid-column-end:3; grid-row-start: 3; grid-row-end: 4;">
                                     <label for="address">Address: </label><br>
                                     <input type="text" name="address" id="address"><br>
                                 </div>
 
-                                <div style="grid-column-start:1; grid-column-end:4; grid-row-start: 4; grid-row-end: 5;">
+                                <div style="grid-column-start:1; grid-column-end:2; grid-row-start: 4; grid-row-end: 5;">
                                     <label for="country">Country: </label><br>
                                     <input type="text" name="country" id="country"><br>
                                 </div>
 
-                                <div style="grid-column-start:4; grid-column-end:5; grid-row-start: 4; grid-row-end: 5;">
+                                <div style="grid-column-start:2; grid-column-end:3; grid-row-start: 4; grid-row-end: 5;">
                                     <label for="zip">Zip Code:</label><br>
                                     <input type="text" name="zip" id="zip"><br>
                                 </div>
 
-                                <div style="grid-column-start:1; grid-column-end:5; grid-row-start: 5; grid-row-end: 6;">
+                                <div style="grid-column-start:1; grid-column-end:3; grid-row-start: 5; grid-row-end: 6;">
                                     <label for="zip">Spoken Language(s):</label><br>
                                     <input type="text" name="lang" id="lang"><br>
                                 </div>
 
                                 <!-- right column -->
-                                <div style="grid-column-start: 5; grid-column-end: 6; grid-row-start: 1; grid-row-end: 2;">
+                                <div style="grid-column-start: 3; grid-column-end: 4; grid-row-start: 1; grid-row-end: 2;">
                                     <label for="email">Email: </label><br>
                                     <input type="email" name="email" id="email"><br>
                                 </div>
 
-                                <div style="grid-column-start:5; grid-column-end:6; grid-row-start: 2; grid-row-end: 3;">
-                                    <label>Gender: </label><br>
-                                    <div style="display: flex; flex-direction: row; justify-content: space-around; font-size: 1.36vw;">
+                                <div style="grid-column-start: 3; grid-column-end:4; grid-row-start: 2; grid-row-end: 3;">
+                                    <label>Gender: </label><br><br>
+                                    <div style="display: flex; flex-direction: row; justify-content: space-around; align-content: space-around;font-size: 1.36vw;">
                                         <div>
                                             <input type="checkbox" name="sexm" id="sexm" style="height: 2vh; width: fit-content; display: inline-block;">
                                             <label for="sexm" style="display:inline-block;">Male</label>
-                                            
                                         </div>
 
                                         <div>
@@ -102,33 +101,72 @@
                                             <label for="sexf">Female</label>
                                         </div>
 
-                                       <div>
+                                        <div>
                                             <input type="checkbox" name="sexo" id="sexo" style="height: 2vh; width: fit-content; display: inline-block;">
                                             <label for="sexo">Other</label>
-                                       </div>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <div style="grid-column-start:5; grid-column-end:6; grid-row-start: 3; grid-row-end: 6;">
-                                    <label for="bio">Tell us about yourself: </label><br>
-                                    <input type="text" name="bio" id="bio" style="height: 14vh;"><br>
+                                <div style="grid-column-start: 3; grid-column-end: 4; grid-row-start: 3; grid-row-end: 6;">
+                                    <label for="bio">Bio:</label><br>
+                                    <textarea name="bio" id="bio" style="height: 100%; font-family: 'Sofia Sans', sans-serif;" rows="10"></textarea>
+                                    <!-- <input type="text" name="bio" id="bio" style="height: 14vh;"><br> -->
                                 </div>
-
-                                <div style="grid-column-start:1; grid-column-end:6; grid-row-start: 6; grid-row-end: 7;">
+                                
+                                <!-- <div style="grid-column-start:1; grid-column-end:6; grid-row-start: 6; grid-row-end: 7;">
                                     <button id="logincontinue" type="submit" style="margin-top: 0;"> Continue </button>
-                                </div>
+                                </div> -->
                             </form>
                         </div>
                     </div>
     
-                    <div id="image-half">
-                        bsdfesdfsdf
+                    <div id="driver-half">
+                        <h1 style="margin-top: 6%;">Joining as a driver or a passenger?</h1>
+                        <div id="driver-form-wrapper">
+                            <form id="driver-form" class="form" action="#password-screen">
+                                <div style="display: flex; flex-direction: row; justify-content: space-around; font-size: 1.9vw;">
+                                    <div>
+                                        <input type="checkbox" name="passenger" id="passenger">
+                                        <label for="passenger">Passenger</label><br>
+                                    </div>
+
+                                    <div>
+                                        <input type="checkbox" name="driver" id="driver">
+                                        <label for="driver">Driver</label> <br>
+                                    </div>
+                                </div>
+                                <br>
+                                <label for="">TODO: implement additional driver details</label>
+                                <br>
+                                <div>
+                                    <button id="logincontinue" type="submit"> Continue </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div id="screen2" style="position:absolute; left:100vw; width:100%; height:100%; background-color: red; display:inline-block">
-
+            <div id="password-screen" style="position:absolute; left:100vw; width:100%; height:100%; background-color: #2E3440; display:inline-block">
+                <div style="position:absolute; bottom:0; height: 92vh; width:100vw;">
+                    <div id="pass-wrapper" class="horizontal-centered-container" style="margin-top:2%;text-align: center; width: 30vw;">
+                        <h1>One last step!</h1>
+                        <h2>Choose a password</h2>
+                        <div>
+                            <form class="form" id="password-form" action="./account.html">
+                                <label for="pwd">Password:</label><br>
+                                <input type="password" name="pwd" id="pwd"><br>
+    
+                                <label for="confirm-pwd">Confirm your password:</label><br>
+                                <input type="password" name="confirm-pwd" id="confirm-pwd"><br>
+    
+                                <button id="submit-new-acc" type="submit" style="width: fit-content;"> Create account! </button>
+    
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
