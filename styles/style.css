@@ -3,10 +3,16 @@
     position: fixed;
     display: flex;
     justify-content: space-between;
-    min-height: 8vh;
-    background-color: #4B5043;
+    height: 8vh;
+    background-color: #A3BE8C;
     z-index: 300;
+    top: 0;
 }
+
+#headerId h1 {
+    font-size: 2vw;
+}
+
 body{
     margin:0;
     background-color: transparent;
