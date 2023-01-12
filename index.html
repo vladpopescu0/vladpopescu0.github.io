@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CarYe</title>
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/global.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
   <body>
@@ -15,34 +16,38 @@
                   <img src="./resources/teeth-grille-manipulation-drivemag-03-3815.jpeg" alt="logo" id="logoHeader">
                   <h1 id="bigName">CarYe</h1>
                 </div>
-                <div id="googleMaps">
-                  <iframe
-                width="600"
-                height="450"
-                style="border:0"
-                loading="lazy"
-                allowfullscreen
-                referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDw9FiPll7d-XTq4Msl-FfbcRwIgSndu9c
-                  &q=Space+Needle,Seattle+WA">
-              </iframe>
-                </div>
+                
                 <ul>
                     <li><a href="./index.html">Home</a></li>
-                    <li><a href="./login.html" target="_blank">Log In</a></li>
+                    <li><a href="./login.html">Log In</a></li>
                     <li><a href="https://www.youtube.com/watch?v=S9bCLPwzSC0" target="_blank">Contact</a></li>
                     <li><a href="https://www.youtube.com/watch?v=cc2niaAcxaE" target="_blank">About</a></li>
                   </ul>
             </header>
-            <form id="pickerCard">
-                  <input id="inputText" type="text" name="start" placeholder="Start Location">
-                  <input id="inputText" type="text" name="end" placeholder="End Location">
-                  <input type="button" value="Search for rides" id="searchButton">
-            </form>
+            <div class="double-column-screen">
+              <form id="pickerCard">
+                <input class="inputText" type="text" name="start" placeholder="Start Location">
+                <input class="inputText" type="text" name="end" placeholder="End Location">
+                <input type="button" value="Search for rides" class="button" id="searchButton">
+              </form>
+              <div id="googleMaps">
+                
+              </div>
+            </div>
+            
             
     </main>
-	<script src="index.js">
-        
+	<script>
+        function initMap(){
+          var location ={lat: 50, lng:40};
+          var map = new google.maps.Map(document.getElementById("googleMaps"),{
+            zoom: 4,
+            center: location
+          });
+        }
     </script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw9FiPll7d-XTq4Msl-FfbcRwIgSndu9c&callback=initMap">
+
+      </script>
   </body>
 </html>
