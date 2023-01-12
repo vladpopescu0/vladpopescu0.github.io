@@ -50,3 +50,13 @@
     /* width: 100vw; */
     /* height: 100vh; */
 }
+
+h1 {
+    font-size: 3vw;
+    color: #E5E9F0;
+}
+
+h2 {
+    font-size: 2vw;
+    color: #E5E9F0;
+}

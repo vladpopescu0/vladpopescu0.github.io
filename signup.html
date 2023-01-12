@@ -13,12 +13,13 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap" rel="stylesheet">
 
-        <title>CarYa - Login</title>
+        <title>CarYa - Signup</title>
 
         <style>
         body {
             background-color:#2E3440;
             font-family: 'Sofia Sans', sans-serif;
+            overflow-x: hidden;
         } 
         </style>
     </head>
@@ -26,7 +27,7 @@
         <header id="headerId">
             <div id="iconAndText">
             <img src="./resources/teeth-grille-manipulation-drivemag-03-3815.jpeg" alt="logo" id="logoHeader">
-            <h1 id="bigName">CarYe</h1>
+            <h2 id="bigName">CarYe</h2>
             </div>
             <ul>
                 <li><a href="./index.html">Home</a></li>
@@ -36,45 +37,100 @@
             </ul>
         </header>
 
-        <div id="screen1" class="screen" style="background:transparent; overflow-x: auto; overflow-y: scroll; margin:0px; width: 100vw; height: 100vh; box-sizing: border-box; ">
-            <div id="signup-form-wrapper" class="horizontal-centered-container" style="position:relative; display:inline-block; width: 100vw; height: 100vh;">
-                <form action="./account.html" class="form">
-                    <label for="uname">Username: </label><br>
-                    <input type="text" id="username" name="uname"><br>
-    
-                    <label for="email">Email: </label><br>
-                    <input type="email" name="email" id="email"><br>
-    
-                    <label for="name">Name: </label><br>
-                    <input type="text" name="name" id="name"><br>
-    
-                    <label for="address">Address: </label><br>
-                    <input type="text" name="address" id="address"><br>
-    
-                    <label for="country">Country: </label><br>
-                    <input type="text" name="country" id="country"><br>
-    
-                    <label for="zip">Zip Code:</label><br>
-                    <input type="text" name="zip" id="zip"><br>
-    
-                    <label for="sex">Gender: </label><br>
-                    <input type="checkbox" name="sex" id="sex"><br>
-    
-                    <label for="bio">Tell us about yourself: </label><br>
-                    <input type="text" name="bio" id="bio"> <br>
 
-                    <a href="#screen2">Continue</a>
-                </form>
+        <div id="mainscreen" style="background:transparent; max-width: 100vw; 
+        height: 100vh; overflow-y: scroll; overflow-x: hidden; transform: linear 1s;">
+            <div id="screen1">
+                <div id="signup-wrapper">
+                    <div id="signup-half">
+                        <h1 style="margin-top: 5%; flex-shrink: 1;">Create an account</h1>
+                        <div id="signup-form-wrapper" >
+                            <form id="signup-form" action="#screen2" class="form">
+                                <!-- left column -->
+                                <div style="grid-column-start:1; grid-column-end:5; grid-row-start: 1; grid-row-end: 2;">
+                                    <label for="uname">Username: </label><br>
+                                    <input type="text" id="username" name="uname"><br>
+                                </div>
+
+                                <div style="grid-column-start:1; grid-column-end:3; grid-row-start: 2; grid-row-end: 3;">
+                                    <label for="name">First Name: </label><br>
+                                    <input type="text" name="name" id="name"><br>
+                                </div>
+
+                                <div style="grid-column-start:3; grid-column-end:5; grid-row-start: 2; grid-row-end: 3;">
+                                    <label for="name">Last Name: </label><br>
+                                    <input type="text" name="name" id="name"><br>
+                                </div>
+                                
+                                <div style="grid-column-start:1; grid-column-end:5; grid-row-start: 3; grid-row-end: 4;">
+                                    <label for="address">Address: </label><br>
+                                    <input type="text" name="address" id="address"><br>
+                                </div>
+
+                                <div style="grid-column-start:1; grid-column-end:4; grid-row-start: 4; grid-row-end: 5;">
+                                    <label for="country">Country: </label><br>
+                                    <input type="text" name="country" id="country"><br>
+                                </div>
+
+                                <div style="grid-column-start:4; grid-column-end:5; grid-row-start: 4; grid-row-end: 5;">
+                                    <label for="zip">Zip Code:</label><br>
+                                    <input type="text" name="zip" id="zip"><br>
+                                </div>
+
+                                <div style="grid-column-start:1; grid-column-end:5; grid-row-start: 5; grid-row-end: 6;">
+                                    <label for="zip">Spoken Language(s):</label><br>
+                                    <input type="text" name="lang" id="lang"><br>
+                                </div>
+
+                                <!-- right column -->
+                                <div style="grid-column-start: 5; grid-column-end: 6; grid-row-start: 1; grid-row-end: 2;">
+                                    <label for="email">Email: </label><br>
+                                    <input type="email" name="email" id="email"><br>
+                                </div>
+
+                                <div style="grid-column-start:5; grid-column-end:6; grid-row-start: 2; grid-row-end: 3;">
+                                    <label>Gender: </label><br>
+                                    <div style="display: flex; flex-direction: row; justify-content: space-around; font-size: 1.36vw;">
+                                        <div>
+                                            <input type="checkbox" name="sexm" id="sexm" style="height: 2vh; width: fit-content; display: inline-block;">
+                                            <label for="sexm" style="display:inline-block;">Male</label>
+                                            
+                                        </div>
+
+                                        <div>
+                                            <input type="checkbox" name="sexf" id="sexf" style="height: 2vh; width: fit-content; display: inline-block;">
+                                            <label for="sexf">Female</label>
+                                        </div>
+
+                                       <div>
+                                            <input type="checkbox" name="sexo" id="sexo" style="height: 2vh; width: fit-content; display: inline-block;">
+                                            <label for="sexo">Other</label>
+                                       </div>
+                                    </div>
+                                </div>
+
+                                <div style="grid-column-start:5; grid-column-end:6; grid-row-start: 3; grid-row-end: 6;">
+                                    <label for="bio">Tell us about yourself: </label><br>
+                                    <input type="text" name="bio" id="bio" style="height: 14vh;"><br>
+                                </div>
+
+                                <div style="grid-column-start:1; grid-column-end:6; grid-row-start: 6; grid-row-end: 7;">
+                                    <button id="logincontinue" type="submit" style="margin-top: 0;"> Continue </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+    
+                    <div id="image-half">
+                        bsdfesdfsdf
+                    </div>
+                </div>
             </div>
 
-            <div id="screen2" class="screen" style="position:relative; display:inline-block; width: 100vw; height: 100vh; background-color: aqua;">
+            <div id="screen2" style="position:absolute; left:100vw; width:100%; height:100%; background-color: red; display:inline-block">
 
             </div>
+
         </div>
-
-        
-
-        
-       
     </body>
 </html>

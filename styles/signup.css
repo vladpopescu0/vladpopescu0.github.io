@@ -1,12 +1,73 @@
-#signup-form-wrapper {
-    margin-top: 0vh;
-    padding-top: 8vh;
-    position: relative;
-    width: 50%;
-    /* display: flex; */
-    /* background-color: antiquewhite; */
+#screen1 {
+    position:absolute; 
+    left:0; 
+    width:100%; 
+    height:100%; 
+    display:inline-block  
 }
 
-/* #signup-form-wrapper form {
+#signup-wrapper {
+    position: absolute;
+    bottom: 0;
+    height: 92vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: nowrap;
     text-align: center;
-} */
+}
+
+#signup-half {
+    height: 100%; 
+    background-color: #2E3440;
+    flex-basis: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+#image-half {
+    height: 100%; 
+    flex-grow: 1;
+    background-color: antiquewhite;
+}
+
+#signup-form-wrapper {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    flex-basis: 85%;
+    box-sizing: border-box;
+    /* background-color: grey; */
+}
+
+#signup-form {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    /* background-color: black; */
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr 1fr 4fr;
+    grid-template-rows:     1fr 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 3%;
+    row-gap: 3%;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 4%;
+    vertical-align: top;
+    align-items:baseline;
+}
+
+#signup-form div {
+    /* background-color: aqua; */
+    box-sizing: border-box;
+}
+
+#signup-form input {
+    width: 100%;
+    margin-top: 2%;
+    padding: 2%;
+    height: 5vh;
+    box-sizing: border-box;
+}
