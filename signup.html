@@ -13,7 +13,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap" rel="stylesheet">
 
-        <title>CarYa - Signup</title>
+        <title>CarYe - Signup</title>
 
         <style>
             body {
@@ -33,7 +33,7 @@
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./login.html">Log In</a></li>
                 <li><a href="https://www.youtube.com/watch?v=S9bCLPwzSC0" target="_blank">Contact</a></li>
-                <li><a href="https://www.youtube.com/watch?v=cc2niaAcxaE" target="_blank">About</a></li>
+                <li><a href="./about.html">About</a></li>
             </ul>
         </header>
 
@@ -49,43 +49,43 @@
                                 <!-- left column -->
                                 <div style="grid-column-start:1; grid-column-end:3; grid-row-start: 1; grid-row-end: 2;">
                                     <label for="uname">Username: </label><br>
-                                    <input type="text" id="username" name="uname"><br>
+                                    <input type="text" id="username" name="uname" placeholder="Username"><br>
                                 </div>
 
                                 <div style="grid-column-start:1; grid-column-end:2; grid-row-start: 2; grid-row-end: 3;">
                                     <label for="name">First Name: </label><br>
-                                    <input type="text" name="name" id="name"><br>
+                                    <input type="text" name="name" id="name" placeholder="First Name"><br>
                                 </div>
 
                                 <div style="grid-column-start:2; grid-column-end:3; grid-row-start: 2; grid-row-end: 3;">
                                     <label for="name">Last Name: </label><br>
-                                    <input type="text" name="name" id="name"><br>
+                                    <input type="text" name="name" id="name" placeholder="Last Name"><br>
                                 </div>
                                 
                                 <div style="grid-column-start:1; grid-column-end:3; grid-row-start: 3; grid-row-end: 4;">
                                     <label for="address">Address: </label><br>
-                                    <input type="text" name="address" id="address"><br>
+                                    <input type="text" name="address" id="address" placeholder="Street Name No. XX, City, Province"><br>
                                 </div>
 
                                 <div style="grid-column-start:1; grid-column-end:2; grid-row-start: 4; grid-row-end: 5;">
                                     <label for="country">Country: </label><br>
-                                    <input type="text" name="country" id="country"><br>
+                                    <input type="text" name="country" id="country" placeholder="Country"><br>
                                 </div>
 
                                 <div style="grid-column-start:2; grid-column-end:3; grid-row-start: 4; grid-row-end: 5;">
                                     <label for="zip">Zip Code:</label><br>
-                                    <input type="text" name="zip" id="zip"><br>
+                                    <input type="text" name="zip" id="zip" placeholder="Zip"><br>
                                 </div>
 
                                 <div style="grid-column-start:1; grid-column-end:3; grid-row-start: 5; grid-row-end: 6;">
                                     <label for="zip">Spoken Language(s):</label><br>
-                                    <input type="text" name="lang" id="lang"><br>
+                                    <input type="text" name="lang" id="lang" placeholder="Language 1, Language 2"><br>
                                 </div>
 
                                 <!-- right column -->
                                 <div style="grid-column-start: 3; grid-column-end: 4; grid-row-start: 1; grid-row-end: 2;">
                                     <label for="email">Email: </label><br>
-                                    <input type="email" name="email" id="email"><br>
+                                    <input type="email" name="email" id="email" placeholder="email@domain.ex"><br>
                                 </div>
 
                                 <div style="grid-column-start: 3; grid-column-end:4; grid-row-start: 2; grid-row-end: 3;">
@@ -110,7 +110,7 @@
 
                                 <div style="grid-column-start: 3; grid-column-end: 4; grid-row-start: 3; grid-row-end: 6;">
                                     <label for="bio">Bio:</label><br>
-                                    <textarea name="bio" id="bio" style="height: 100%; font-family: 'Sofia Sans', sans-serif;" rows="10"></textarea>
+                                    <textarea name="bio" id="bio" style="height: 100%; font-family: 'Sofia Sans', sans-serif;" rows="10" placeholder="Short description about yourself"></textarea>
                                     <!-- <input type="text" name="bio" id="bio" style="height: 14vh;"><br> -->
                                 </div>
                                 
@@ -156,10 +156,10 @@
                         <div>
                             <form class="form" id="password-form" action="./account.html">
                                 <label for="pwd">Password:</label><br>
-                                <input type="password" name="pwd" id="pwd"><br>
+                                <input type="password" name="pwd" id="pwd" placeholder="Enter password"><br>
     
                                 <label for="confirm-pwd">Confirm your password:</label><br>
-                                <input type="password" name="confirm-pwd" id="confirm-pwd"><br>
+                                <input type="password" name="confirm-pwd" id="confirm-pwd" placeholder="Repeat password"><br>
     
                                 <button id="submit-new-acc" type="submit" style="width: fit-content;"> Create account! </button>
     
