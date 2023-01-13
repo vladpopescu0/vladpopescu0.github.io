@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap" rel="stylesheet">
 
     <title>CarYe - Home</title>
-
+    
     <style>
       body {
           font-family: 'Sofia Sans', sans-serif;
@@ -46,21 +46,17 @@
               <div id="googleMaps">
                 
               </div>
+              
             </div>
-            
+            <button id="tryButton">click</button>
             
     </main>
-	<script>
-        function initMap(){
-          var location ={lat: 50, lng:40};
-          var map = new google.maps.Map(document.getElementById("googleMaps"),{
-            zoom: 4,
-            center: location
-          });
-        }
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw9FiPll7d-XTq4Msl-FfbcRwIgSndu9c&callback=initMap&libraries=places"
+    type="text/javascript">
+        
     </script>
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw9FiPll7d-XTq4Msl-FfbcRwIgSndu9c&callback=initMap">
-
-      </script>
+    <script type="module" src="./scripts/index.js">
+    </script>
+      
   </body>
 </html>
