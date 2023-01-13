@@ -8,11 +8,11 @@ function setMarkers() {
 }
 
 function initMap(a1, a2) {
-  const sydney = new google.maps.LatLng(50, 40);
+  const europe = new google.maps.LatLng(50, 40);
 
   infowindow = new google.maps.InfoWindow();
   map = new google.maps.Map(document.getElementById("googleMaps"), {
-    center: sydney,
+    center: europe,
     zoom: 4,
   });
 

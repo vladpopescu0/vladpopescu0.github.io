@@ -32,6 +32,8 @@
 
     background-color: #E5E9F0;
     transition: linear 0.1s;
+
+    text-align: center;
 }
 
 .form input:hover, .form textarea:hover {
