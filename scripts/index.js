@@ -4,15 +4,19 @@ let infowindow;
 document.getElementById("tryButton").addEventListener("click", setMarkers);
 function setMarkers() {
   console.log("ad");
-  createMarkerClick();
+  initMap();
+  var param = document.getElementById("startInput").value;
+  var param2 = document.getElementById("endInput").value;
+  createMarkerClick(param, param2);
 }
 
-function initMap(a1, a2) {
+function initMap() {
   const europe = new google.maps.LatLng(50, 40);
 
   infowindow = new google.maps.InfoWindow();
   map = new google.maps.Map(document.getElementById("googleMaps"), {
     center: europe,
+    streetViewControl: false,
     zoom: 4,
   });
 
@@ -60,13 +64,25 @@ function createMarker(place) {
     infowindow.open(map);
   });
 }
-function createMarkerClick() {
+function createMarkerClick(whereStart, whereEnd) {
   const request = {
-    query: "eindhoven",
+    query: whereStart,
     fields: ["name", "geometry"],
   };
   service = new google.maps.places.PlacesService(map);
   service.findPlaceFromQuery(request, (results, status) => {
+    if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+      for (let i = 0; i < results.length; i++) {
+        createMarker(results[i]);
+      }
+    }
+  });
+  const request2 = {
+    query: whereEnd,
+    fields: ["name", "geometry"],
+  };
+  service = new google.maps.places.PlacesService(map);
+  service.findPlaceFromQuery(request2, (results, status) => {
     if (status === google.maps.places.PlacesServiceStatus.OK && results) {
       for (let i = 0; i < results.length; i++) {
         createMarker(results[i]);

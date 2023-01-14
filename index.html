@@ -39,16 +39,16 @@
             <div class="double-column-screen">
               <form id="pickerCard">
                 <p id="formTitle">Pick your next route!</p>
-                <input class="inputText" type="text" name="start" placeholder="Start Location">
-                <input class="inputText" type="text" name="end" placeholder="End Location">
-                <input type="button" value="Search for rides" class="button" id="searchButton">
+                <input class="inputText" type="text" name="start" placeholder="Start Location" id="startInput">
+                <input class="inputText" type="text" name="end" placeholder="End Location" id="endInput">
+                <button type="button" class="button searchButton" id="tryButton">Show the route</button>
+                <button class="button searchButton" >Search for rides</button>
               </form>
               <div id="googleMaps">
                 
               </div>
               
             </div>
-            <button id="tryButton">click</button>
             
     </main>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw9FiPll7d-XTq4Msl-FfbcRwIgSndu9c&callback=initMap&libraries=places"
