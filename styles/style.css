@@ -99,6 +99,10 @@ a:hover {
 .inputText::placeholder{
     color:white;
 }
+input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
 .searchButton{
     font-size: 20px;
     margin-left: 10%;

@@ -42,7 +42,7 @@
                 <input class="inputText" type="text" name="start" placeholder="Start Location" id="startInput">
                 <input class="inputText" type="text" name="end" placeholder="End Location" id="endInput">
                 <button type="button" class="button searchButton" id="tryButton">Show the route</button>
-                <button class="button searchButton" >Search for rides</button>
+                <button class="button searchButton" onclick="location.href='127.0.0.1/3000:about.html';">Search for rides</button>
               </form>
               <div id="googleMaps">
                 
@@ -52,7 +52,7 @@
             
     </main>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw9FiPll7d-XTq4Msl-FfbcRwIgSndu9c&callback=initMap&libraries=places"
-    type="text/javascript">
+    type="text/javascript" defer>
         
     </script>
     <script type="module" src="./scripts/index.js">

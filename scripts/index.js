@@ -1,17 +1,12 @@
 let map;
 let service;
+let position = { lat: 50, lng: 5 };
 let infowindow;
-document.getElementById("tryButton").addEventListener("click", setMarkers);
-function setMarkers() {
-  console.log("ad");
-  initMap();
-  var param = document.getElementById("startInput").value;
-  var param2 = document.getElementById("endInput").value;
-  createMarkerClick(param, param2);
-}
 
 function initMap() {
-  const europe = new google.maps.LatLng(50, 40);
+  let directionsService = new google.maps.DirectionsService();
+  let directionsRenderer = new google.maps.DirectionsRenderer();
+  const europe = new google.maps.LatLng(position.lat, position.lng);
 
   infowindow = new google.maps.InfoWindow();
   map = new google.maps.Map(document.getElementById("googleMaps"), {
@@ -19,6 +14,13 @@ function initMap() {
     streetViewControl: false,
     zoom: 4,
   });
+  directionsRenderer.setMap(map);
+  const setMarkers = function () {
+    var param = document.getElementById("startInput").value;
+    var param2 = document.getElementById("endInput").value;
+    createRoute(param, param2, directionsService, directionsRenderer);
+  };
+  document.getElementById("tryButton").addEventListener("click", setMarkers);
 
   // const request = {
   //   query: a1,
@@ -51,42 +53,58 @@ function initMap() {
   // map.setCenter(loc1.geometry.location);
 }
 
-function createMarker(place) {
-  if (!place.geometry || !place.geometry.location) return;
+// function createMarker(place) {
+//   if (!place.geometry || !place.geometry.location) return;
 
-  const marker = new google.maps.Marker({
-    map,
-    position: place.geometry.location,
-  });
+//   const marker = new google.maps.Marker({
+//     map,
+//     position: place.geometry.location,
+//   });
 
-  google.maps.event.addListener(marker, "click", () => {
-    infowindow.setContent(place.name || "");
-    infowindow.open(map);
-  });
-}
-function createMarkerClick(whereStart, whereEnd) {
-  const request = {
-    query: whereStart,
-    fields: ["name", "geometry"],
+//   google.maps.event.addListener(marker, "click", () => {
+//     infowindow.setContent(place.name || "");
+//     infowindow.open(map);
+//   });
+// }
+function createRoute(
+  whereStart,
+  whereEnd,
+  directionsService,
+  directionsRenderer
+) {
+  // const request = {
+  //   query: whereStart,
+  //   fields: ["name", "geometry"],
+  // };
+  // service = new google.maps.places.PlacesService(map);
+  // service.findPlaceFromQuery(request, (results, status) => {
+  //   if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+  //     for (let i = 0; i < results.length; i++) {
+  //       createMarker(results[i]);
+  //     }
+  //   }
+  // });
+  // const request2 = {
+  //   query: whereEnd,
+  //   fields: ["name", "geometry"],
+  // };
+  // service = new google.maps.places.PlacesService(map);
+  // service.findPlaceFromQuery(request2, (results, status) => {
+  //   if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+  //     for (let i = 0; i < results.length; i++) {
+  //       createMarker(results[i]);
+  //     }
+  //   }
+  // });
+  var requestDirections = {
+    origin: { query: whereStart },
+    destination: { query: whereEnd },
+    travelMode: google.maps.TravelMode.DRIVING,
   };
-  service = new google.maps.places.PlacesService(map);
-  service.findPlaceFromQuery(request, (results, status) => {
-    if (status === google.maps.places.PlacesServiceStatus.OK && results) {
-      for (let i = 0; i < results.length; i++) {
-        createMarker(results[i]);
-      }
-    }
-  });
-  const request2 = {
-    query: whereEnd,
-    fields: ["name", "geometry"],
-  };
-  service = new google.maps.places.PlacesService(map);
-  service.findPlaceFromQuery(request2, (results, status) => {
-    if (status === google.maps.places.PlacesServiceStatus.OK && results) {
-      for (let i = 0; i < results.length; i++) {
-        createMarker(results[i]);
-      }
+  directionsService.route(requestDirections, function (result, status) {
+    if (status == "OK") {
+      console.log(result);
+      directionsRenderer.setDirections(result);
     }
   });
 }
