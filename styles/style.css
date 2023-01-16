@@ -112,19 +112,22 @@ input:-webkit-autofill,
     top: 8vh;
     left: 1vw;
     height: 92vh;
-    width: fit-content;
+    /* width: fit-content; */
+    /* width: 16vw; */
     background-color: transparent;
     overflow-y: scroll;
     overflow-x: visible;
     scroll-behavior: smooth;
+    scrollbar-color: rgba(255, 0, 0, 0);
 }
 
 .expandable-circle-list {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    transition: ease-in-out 0.3s;
-
+    transition: ease-in-out 1s;
+    align-items: flex-start;    
+    overflow-x: visible;
 }
 .expandable-circle-list li{
     position: relative;
@@ -133,6 +136,7 @@ input:-webkit-autofill,
     height: 6vw;
     box-sizing: border-box;
     background-color: #2E3440;
+    left: 0;
 
     border-radius: 50%;
     border-width: 5px;
@@ -154,17 +158,21 @@ input:-webkit-autofill,
     color: #ECEFF4;
     text-align: center;
     font-size: 1.3vw;
+    transition: ease-in 0.5s;
 }
 
 .circle-list-content {
     box-sizing: border-box;
     padding: 10%;
-    width: 100%;
     color: #ECEFF4;
     /* background-color: red; */
     text-align: left;
     font-size: 1.3vw;
-    visibility: hidden;
+    width: 0;
+    height: 0;
+    opacity: 0%;
+    transition: ease-out 0.2s;
+    /* visibility: hidden; */
 }
 
 .circle-list-content h1 {
@@ -189,6 +197,7 @@ input:-webkit-autofill,
 }
 
 .expandable-circle-list li:hover {
+    opacity: 100%;
     width: 15vw;
     height: 17vh;
     border-radius: 50px;
@@ -196,8 +205,16 @@ input:-webkit-autofill,
 
 .expandable-circle-list li:hover > .circle-list-content{
     visibility: visible;
+    opacity: 100%;
+    width: 100%;
+    height: fit-content;
+    transition: ease-in 0.5s;
 }
 
 .expandable-circle-list li:hover > .circle-list-title{
     visibility: hidden;
+    opacity: 50%;
+    width: 0;
+    height: 0;
+    transition: ease-out 0.2s;
 }
