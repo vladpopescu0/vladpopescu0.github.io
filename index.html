@@ -13,51 +13,193 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap" rel="stylesheet">
 
-    <title>CarYe - Home</title>
     <script type="module" src="./scripts/index.js">
     </script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw9FiPll7d-XTq4Msl-FfbcRwIgSndu9c&callback=initMap&libraries=places"
+      type="text/javascript" defer>
+    </script>
+    <title>CarYe - Home</title>
+    <!-- <script type="module" src="./scripts/index.js">
+    </script> -->
       
     <style>
       body {
           font-family: 'Sofia Sans', sans-serif;
       } 
     </style>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw9FiPll7d-XTq4Msl-FfbcRwIgSndu9c&callback=initMap&libraries=places"
+    <!-- <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw9FiPll7d-XTq4Msl-FfbcRwIgSndu9c&callback=initMap&libraries=places"
     type="text/javascript" defer>
         
-    </script>
+    </script> -->
   </head>
   <body>
     <main>
-            <header id="headerId">
-                <div id="iconAndText">
-                  <img src="./resources/teeth-grille-manipulation-drivemag-03-3815.jpeg" alt="logo" id="logoHeader">
-                  <h1 id="bigName">CarYe</h1>
-                </div>
-                
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./login.html">Log In</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=S9bCLPwzSC0" target="_blank">Contact</a></li>
-                    <li><a href="./about.html">About</a></li>
-                  </ul>
-            </header>
-            <div class="double-column-screen">
-              <form id="pickerCard">
-                <p id="formTitle">Pick your next route!</p>
-                <input class="inputText" type="text" name="start" placeholder="Start Location" id="startInput">
-                <input class="inputText" type="text" name="end" placeholder="End Location" id="endInput">
-                <button type="button" class="button searchButton" id="tryButton">Show the route</button>
-                <button type="submit" class="button searchButton" id="submitForm">Search for rides</button>
-              </form>
-              <div id="googleMaps">
-                
-              </div>
-              
+      <header id="headerId">
+          <div id="iconAndText">
+            <img src="./resources/car-logo.png" alt="logo" id="logoHeader">
+            <h1 id="bigName">CarYe</h1>
+          </div>
+          
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="./login.html">Log In</a></li>
+            <li><a href="./notfound.html">Contact</a></li>
+            <li><a href="./about.html">About</a></li>
+          </ul>
+      </header>
+      <div class="double-column-screen">
+        <form id="pickerCard">
+          <p id="formTitle">Pick your next route!</p>
+          <input class="inputText" type="text" name="start" placeholder="Start Location" id="startInput">
+          <input class="inputText" type="text" name="end" placeholder="End Location" id="endInput">
+          <button type="button" class="button searchButton" id="tryButton">Show the route</button>
+          <button type="button" class="button searchButton" id="submitButton">Search for rides</button>
+        </form>
+        <div id="googleMaps">
+          
+        </div>
+      </div>
+
+      <div id="rides-menu">
+        <ul class="expandable-circle-list">
+          <!-- TODO WITH JS make this type of li into a template and auto generatable -->
+          <li>
+            <div class="circle-list-title">
+              drive 1
             </div>
-            
+
+            <div class="circle-list-content centered-container">
+              <h1>Driver: Danlier Vrep</h1>
+              <p>
+                Leaves: 10:54 
+                <br>
+                Estimated arrival: 2:33
+              </p>
+              <a href="./notfound.html">View More</a>
+            </div>
+          </li>
+          <li>
+            <div class="circle-list-title">
+              drive 2
+            </div>
+
+            <div class="circle-list-content">
+              <h1>Driver: Danlier Vrep</h1>
+              <p>
+                Leaves: 10:54 
+                <br>
+                Estimated arrival: 2:33
+              </p>
+              <a href="./notfound.html">View More</a>
+            </div>
+          </li>
+          <li>
+            <div class="circle-list-title">
+              drive 3
+            </div>
+
+            <div class="circle-list-content">
+              <h1>Driver: Danlier Vrep</h1>
+              <p>
+                Leaves: 10:54 
+                <br>
+                Estimated arrival: 2:33
+              </p>
+              <a href="./notfound.html">View More</a>
+            </div>
+          </li>
+          <!-- <li>
+            <div class="circle-list-title">
+              drive 4
+            </div>
+
+            <div class="circle-list-content">
+              <h1>Driver: Danlier Vrep</h1>
+              <p>
+                Leaves: 10:54 
+                <br>
+                Estimated arrival: 2:33
+              </p>
+              <a href="./notfound.html">View More</a>
+            </div>
+          </li>
+          <li>
+            <div class="circle-list-title">
+              drive 6
+            </div>
+
+            <div class="circle-list-content">
+              <h1>Driver: Danlier Vrep</h1>
+              <p>
+                Leaves: 10:54 
+                <br>
+                Estimated arrival: 2:33
+              </p>
+              <a href="./notfound.html">View More</a>
+            </div>
+          </li>
+          <li>
+            <div class="circle-list-title">
+              drive 7
+            </div>
+
+            <div class="circle-list-content">
+              <h1>Driver: Danlier Vrep</h1>
+              <p>
+                Leaves: 10:54 
+                <br>
+                Estimated arrival: 2:33
+              </p>
+              <a href="./notfound.html">View More</a>
+            </div>
+          </li>
+          <li>
+            <div class="circle-list-title">
+              drive 8
+            </div>
+
+            <div class="circle-list-content">
+              <h1>Driver: Danlier Vrep</h1>
+              <p>
+                Leaves: 10:54 
+                <br>
+                Estimated arrival: 2:33
+              </p>
+              <a href="./notfound.html">View More</a>
+            </div>
+          </li>
+          <li>
+            <div class="circle-list-title">
+              drive 9
+            </div>
+
+            <div class="circle-list-content">
+              <h1>Driver: Danlier Vrep</h1>
+              <p>
+                Leaves: 10:54 
+                <br>
+                Estimated arrival: 2:33
+              </p>
+              <a href="./notfound.html">View More</a>
+            </div>
+          </li>
+          <li>
+            <div class="circle-list-title">
+              drive 10
+            </div>
+
+            <div class="circle-list-content">
+              <h1>Driver: Danlier Vrep</h1>
+              <p>
+                Leaves: 10:54 
+                <br>
+                Estimated arrival: 2:33
+              </p>
+              <a href="./notfound.html">View More</a>
+            </div>
+          </li> -->
+        </ul>
+      </div>
     </main>
-    
-    
   </body>
 </html>
