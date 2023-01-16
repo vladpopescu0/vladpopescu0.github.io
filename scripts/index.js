@@ -2,6 +2,7 @@ let map;
 let service;
 let position = { lat: 50, lng: 5 };
 let infowindow;
+let cumva;
 function initMap() {
   let directionsService = new google.maps.DirectionsService();
   let directionsRenderer = new google.maps.DirectionsRenderer();
