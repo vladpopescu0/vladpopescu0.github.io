@@ -1,24 +1,3 @@
-#headerId{
-    color: #2E3440;
-    min-width: 100%;
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    height: 8vh;
-    background-color: #A3BE8C;
-    z-index: 300;
-    font-family: 'Sofia Sans', sans-serif;
-    top: 0;
-}
-
-#headerId h1 {
-    font-size: 2vw;
-}
-
-#headerId h2 {
-    color: #2E3440;
-}
-
 body{
     margin:0;
     background-color: #2e344094;
@@ -186,7 +165,6 @@ input:-webkit-autofill,
     text-align: left;
     font-size: 1.3vw;
     visibility: hidden;
-    transition: ease-in-out 0.3s;
 }
 
 .circle-list-content h1 {

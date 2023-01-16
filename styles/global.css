@@ -65,3 +65,25 @@ p {
     font-size: 1.5vw;
     color: #E5E9F0;
 }
+
+/* MENU CSS */
+#headerId{
+    color: #2E3440;
+    min-width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    height: 8vh;
+    background-color: #A3BE8C;
+    z-index: 300;
+    font-family: 'Sofia Sans', sans-serif;
+    top: 0;
+}
+
+#headerId h1 {
+    font-size: 2vw;
+}
+
+#headerId h2 {
+    color: #2E3440;
+}
