@@ -52,7 +52,6 @@ a{
     margin-right: 20px;
     transition: linear 0.1s;
 }
-
 a:hover {
     color: #ECEFF4;
     text-decoration: underline;
@@ -128,3 +127,99 @@ input:-webkit-autofill,
     flex-direction: row-reverse;
     height: 100vh;
   }
+
+#rides-menu {
+    position: absolute;
+    top: 8vh;
+    left: 1vw;
+    height: 92vh;
+    width: fit-content;
+    background-color: transparent;
+    overflow-y: scroll;
+    overflow-x: visible;
+    scroll-behavior: smooth;
+}
+
+.expandable-circle-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    transition: ease-in-out 0.3s;
+
+}
+.expandable-circle-list li{
+    position: relative;
+    display: block;
+    width: 6vw;
+    height: 6vw;
+    box-sizing: border-box;
+    background-color: #2E3440;
+
+    border-radius: 50%;
+    border-width: 5px;
+    border-color: #ECEFF4;
+    border-style: solid;
+
+    margin: 5%;
+    transition: ease-in-out 0.3s;
+}
+
+.expandable-circle-list li div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle-list-title {
+    color: #ECEFF4;
+    text-align: center;
+    font-size: 1.3vw;
+}
+
+.circle-list-content {
+    box-sizing: border-box;
+    padding: 10%;
+    width: 100%;
+    color: #ECEFF4;
+    /* background-color: red; */
+    text-align: left;
+    font-size: 1.3vw;
+    visibility: hidden;
+    transition: ease-in-out 0.3s;
+}
+
+.circle-list-content h1 {
+    font-size: 1.1vw;
+    color: #ECEFF4;
+}
+
+.circle-list-content p {
+    font-size: 1vw;
+    color: #ECEFF4;
+}
+
+.circle-list-content a {
+    text-decoration: underline;
+    text-align: left;
+    color: #ECEFF4;
+    font-size: 1vw;
+}
+
+.circle-list-content a:hover {
+    color: #A3BE8C;
+}
+
+.expandable-circle-list li:hover {
+    width: 15vw;
+    height: 17vh;
+    border-radius: 50px;
+}
+
+.expandable-circle-list li:hover > .circle-list-content{
+    visibility: visible;
+}
+
+.expandable-circle-list li:hover > .circle-list-title{
+    visibility: hidden;
+}
