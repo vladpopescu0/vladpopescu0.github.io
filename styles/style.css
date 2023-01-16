@@ -108,6 +108,7 @@ input:-webkit-autofill,
   }
 
 #rides-menu {
+    box-sizing: border-box;
     position: absolute;
     visibility: hidden;
     top: 8vh;
