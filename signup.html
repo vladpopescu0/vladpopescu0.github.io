@@ -40,12 +40,12 @@
 
         <div id="mainscreen" style="background:transparent; max-width: 100vw; 
         height: 100vh; overflow-y: scroll; overflow-x: hidden; transform: linear 1s;">
-            <div id="signup-screen">
+            <form id="signup-form" action="#password-screen">
                 <div id="signup-wrapper">
                     <div id="signup-half">
                         <h1 style="margin-top: 5%; flex-shrink: 1;">Create an account</h1>
                         <div id="signup-form-wrapper" >
-                            <form id="signup-form" action="#password-screen" class="form">
+                            <div id="signup-data-form" class="form">
                                 <!-- left column -->
                                 <div style="grid-column-start:1; grid-column-end:3; grid-row-start: 1; grid-row-end: 2;">
                                     <label for="uname">Username: </label><br>
@@ -122,14 +122,14 @@
                                 <!-- <div style="grid-column-start:1; grid-column-end:6; grid-row-start: 6; grid-row-end: 7;">
                                     <button id="logincontinue" type="submit" style="margin-top: 0;"> Continue </button>
                                 </div> -->
-                            </form>
+                            </div>
                         </div>
                     </div>
     
                     <div id="driver-half">
                         <h1 style="margin-top: 6%;">Joining as a driver or a passenger?</h1>
                         <div id="driver-form-wrapper">
-                            <form id="driver-form" class="form" action="#password-screen">
+                            <div id="driver-form" class="form">
                                 <div style="display: flex; flex-direction: row; justify-content: space-around; font-size: 1.9vw;">
                                     <div>
                                         <input type="checkbox" name="passenger" id="passenger">
@@ -158,11 +158,11 @@
                                 <div>
                                     <button id="logincontinue" type="submit"> Continue </button>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
 
             <div id="password-screen" style="position:absolute; left:100vw; width:100%; height:100%; background-color: #2E3440; display:inline-block">
                 <div style="position:absolute; bottom:0; height: 92vh; width:100vw;">
