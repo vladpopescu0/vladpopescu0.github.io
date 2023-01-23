@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="refresh" content="url = http://127.0.0.1:5500/account.html" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/global.css">
+        <link rel="stylesheet" href="./styles/forms.css">
+        <link rel="stylesheet" href="./styles/signup.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap" rel="stylesheet">
+
+        <title>CarYe - Signup</title>
+        <script src="./scripts/regexAssignment.js">
+            
+        </script>
+        <style>
+            body {
+                background-color:#2E3440;
+                font-family: 'Sofia Sans', sans-serif;
+                overflow-x: hidden;
+            } 
+        </style>
+    </head>
+    <body> 
+        <header id="headerId">
+            <div id="iconAndText">
+                <img src="./resources/car-logo.png" alt="logo" id="logoHeader">
+                <h1 id="bigName">CarYe</h1>
+            </div>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./login.html">Log In</a></li>
+                <li><a href="./notfound.html">Contact</a></li>
+                <li><a href="./about.html">About</a></li>
+            </ul>
+        </header>
+
+
+        <div id="mainscreen" style="background:transparent; max-width: 100vw; 
+        height: 100vh; overflow-y: scroll; overflow-x: hidden; transform: linear 1s;">
+            <form id="signup-form" action="#password-screen">
+                <div id="signup-wrapper">
+                    <div id="signup-half">
+                        <h1 style="margin-top: 5%; flex-shrink: 1;">Create an account</h1>
+                        <div id="signup-form-wrapper" >
+                            <div id="signup-data-form" class="form">
+                                <!-- left column -->
+                                <div style="grid-column-start:1; grid-column-end:3; grid-row-start: 1; grid-row-end: 2;">
+                                    <label for="uname">*Username: </label><br>
+                                    <input type="text" id="username" name="uname" placeholder="Username" 
+                                            minlength="5" maxlength="12" required><br>
+                                </div>
+
+                                <div style="grid-column-start:1; grid-column-end:2; grid-row-start: 2; grid-row-end: 3;">
+                                    <label for="name">*First Name: </label><br>
+                                    <input type="text" name="name" id="name" placeholder="First Name" required><br>
+                                </div>
+
+                                <div style="grid-column-start:2; grid-column-end:3; grid-row-start: 2; grid-row-end: 3;">
+                                    <label for="name">*Last Name: </label><br>
+                                    <input type="text" name="name" id="name" placeholder="Last Name" required><br>
+                                </div>
+                                
+                                <div style="grid-column-start:1; grid-column-end:3; grid-row-start: 3; grid-row-end: 4;">
+                                    <label for="address">Address (Optional): </label><br>
+                                    <input type="text" name="address" id="address" placeholder="Street Name No. XX, City, Province"><br>
+                                </div>
+
+                                <div style="grid-column-start:1; grid-column-end:2; grid-row-start: 4; grid-row-end: 5;">
+                                    <label for="country">*Country: </label><br>
+                                    <input type="text" name="country" id="country" placeholder="Country" required><br>
+                                </div>
+
+                                <div style="grid-column-start:2; grid-column-end:3; grid-row-start: 4; grid-row-end: 5;">
+                                    <label for="zip">Zip Code:</label><br>
+                                    <input type="text" name="zip" id="zip" placeholder="Zip"><br>
+                                </div>
+
+                                <div style="grid-column-start:1; grid-column-end:3; grid-row-start: 5; grid-row-end: 6;">
+                                    <label for="zip">*Spoken Language(s):</label><br>
+                                    <input type="text" name="lang" id="lang" placeholder="Language 1, Language 2" multiple required><br>
+                                </div>
+
+                                <!-- right column -->
+                                <div style="grid-column-start: 3; grid-column-end: 4; grid-row-start: 1; grid-row-end: 2;">
+                                    <label for="email">*Email: </label><br>
+                                    <input type="email" name="email" id="email" placeholder="email@domain.ex" autocomplete="on"><br>
+                                </div>
+
+                                <div style="grid-column-start: 3; grid-column-end:4; grid-row-start: 2; grid-row-end: 3;">
+                                    <label>*Gender: </label><br><br>
+                                    <div style="display: flex; flex-direction: row; justify-content: space-around; align-content: space-around;font-size: 1.36vw;">
+                                        <div>
+                                            <input type="radio" name="sexType" id="sexm" style="height: 2vh; width: fit-content; display: inline-block;" required>
+                                            <label for="sexm" style="display:inline-block;">Male</label>
+                                        </div>
+
+                                        <div>
+                                            <input type="radio" name="sexType" id="sexf" style="height: 2vh; width: fit-content; display: inline-block;" required>
+                                            <label for="sexf">Female</label>
+                                        </div>
+
+                                        <div>
+                                            <input type="radio" name="sexType" id="sexo" style="height: 2vh; width: fit-content; display: inline-block;" required>
+                                            <label for="sexo">Other</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="grid-column-start: 3; grid-column-end: 4; grid-row-start: 3; grid-row-end: 4;">
+                                    <label for="birthday">Date of birth (Optional)</label> <br>
+                                    <input type="date" name="birthday" id="birthday"> <br>
+                                </div>
+
+                                <div style="grid-column-start: 3; grid-column-end: 4; grid-row-start: 4; grid-row-end: 6;">
+                                    <label for="bio">Bio (Optional):</label><br>
+                                    <textarea name="bio" id="bio" style="height: 100%; font-family: 'Sofia Sans', sans-serif;" rows="5" placeholder="Short description about yourself"></textarea>
+                                    <!-- <input type="text" name="bio" id="bio" style="height: 14vh;"><br> -->
+                                </div>
+                                
+                                <!-- <div style="grid-column-start:1; grid-column-end:6; grid-row-start: 6; grid-row-end: 7;">
+                                    <button id="logincontinue" type="submit" style="margin-top: 0;"> Continue </button>
+                                </div> -->
+                            </div>
+                        </div>
+                        <h2 style="font-size: 0.9vw;">* = required field</h2>
+                    </div>
+    
+                    <div id="driver-half">
+                        <h1 style="margin-top: 6%;">Joining as a driver or a passenger?</h1>
+                        <div id="driver-form-wrapper">
+                            <div id="driver-form" class="form">
+                                <div style="display: flex; flex-direction: row; justify-content: space-around; font-size: 1.9vw;">
+                                    <div>
+                                        <input type="checkbox" name="passenger" id="passenger" required>
+                                        <label for="passenger">Passenger</label><br>
+                                    </div>
+
+                                    <div>
+                                        <input type="checkbox" name="driver" id="driver" required>
+                                        <label for="driver">Driver</label> <br>
+                                    </div>
+                                </div>
+                                <br>
+                                <div id="licence-input" style="visibility: hidden; opacity: 0; height: 0; transition: ease-in-out 0.3s;">
+                                    <!-- <p>[this should only be visible if driver is selected]</p> -->
+                                    <label for="flicence">Front of licence</label> <br>
+                                    <input type="file" name="flicence" id="flicence"><br>
+
+                                    <label for="blicence">Back of licence</label> <br>
+                                    <input type="file" name="blicence" id="blicence"><br>
+                                </div>
+                                <br>
+                                <div style="transition: ease-in-out 0.3s;">
+                                    <button id="logincontinue" type="submit" > Continue </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div id="password-screen" style="position:absolute; left:100vw; width:100%; height:100%; background-color: #2E3440; display:inline-block">
+                <div style="position:absolute; bottom:0; height: 92vh; width:100vw;">
+                    <div id="pass-wrapper" class="horizontal-centered-container" style="margin-top:2%;text-align: center; width: 30vw;">
+                        <h1>One last step!</h1>
+                        <h2>Choose a password</h2>
+                        <div>
+                            <form class="form" id="password-form" action="./account.html">
+                                <label for="pwd">Password:</label><br>
+                                <input type="password" name="pwd" id="pwd" placeholder="Enter password"
+                                        minlength="12" required><br>
+    
+                                <label for="confirm-pwd">Confirm your password:</label><br>
+                                <input type="password" name="confirm-pwd" id="confirm-pwd" placeholder="Repeat password" 
+                                        minlength="12" required><br>
+    
+                                <button id="submit-new-acc" type="submit" style="width: fit-content;"> Create account! </button>
+    
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+
+    <script>
+        document.getElementById("driver").addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById("licence-input").style.visibility = "visible"
+                document.getElementById("licence-input").style.opacity = "100%"
+                document.getElementById("licence-input").style.height = "fit-content"
+            } else {
+                document.getElementById("licence-input").style.opacity = "0"
+                document.getElementById("licence-input").style.height = "0"
+                document.getElementById("licence-input").style.visibility = "hidden"
+
+            }
+        });
+    </script>
+</html>
