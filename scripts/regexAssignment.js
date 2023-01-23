@@ -1,11 +1,11 @@
-let userID = /^[A-Z].{3,10}(\d|\W)$/;
+let userIDReg = /^[A-Z].{3,10}(\d|\W)$/;
 //must start with a capital letter, followed by 3 to 10 characters and ending with a digit or a special character
-let password = /.{12,}/; //any character at least 12 times
-let name = /^[A-Za-z]+$/;
+let passwordReg = /.{12,}/; //any character at least 12 times
+let nameReg = /^[A-Za-z]+$/;
 //must have at least one letter in the name
-let zipCode = /^[0-9]{4,4}[A-Za-z]{2,2}$/;
+let zipCodeReg = /^[0-9]{4,4}[A-Za-z]{2,2}$/;
 //the first 4 characters are digits and the last 2 are letters
-let email =
+let emailReg =
   /^([A-Za-z0-9]{1,1})([A-Za-z0-9\.\-\_]{3,})([A-Za-z0-9]{1,1})@([A-Za-z0-9]{1,1})([a-zA-Z0-9\.\-]{2,})([A-Za-z0-9]{1,1})\.([a-z]{2,})$/;
 //the first and last chars of the username and of the domain must be letters or numbers ([A-Za-z0-9]{1,1})
 //supported characters for the local-part among letters and digits are hyphens, dots and underscores
@@ -17,6 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .getElementById("logincontinue")
     .addEventListener("click", checkAndDisplay);
+  document
+    .getElementById("submit-new-acc")
+    .addEventListener("click", passwordValid);
 });
 let alphabetBig = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let alphabetSmall = alphabetBig.toLowerCase();
@@ -200,7 +203,9 @@ function checkAndDisplay() {
     checkName(lName) &&
     checkUserID(username) &&
     checkZipCode(zipcode) &&
-    checkEmail(email)
+    checkEmail(email) &&
+    languages != "" &&
+    country != ""
   ) {
     alert(
       "Username: " +
@@ -233,5 +238,62 @@ function checkAndDisplay() {
     );
     document.getElementById("signup-form").submit();
     //location.href = "#password-screen";
+  } else {
+    if (!checkEmail(email)) {
+      document.getElementById("email").value = "";
+      document.getElementById("email").style.border = "red 2px solid";
+      document.getElementById("spanemail").style.display = "block";
+    }
+    if (!checkUserID(username)) {
+      document.getElementById("username").value = "";
+      document.getElementById("username").style.border = "red 2px solid";
+      document.getElementById("spanusername").style.display = "block";
+    }
+    if (!checkName(fName)) {
+      document.getElementById("fname").value = "";
+      document.getElementById("fname").style.border = "red 2px solid";
+      document.getElementById("spanfname").style.display = "block";
+    }
+    if (!checkName(lName)) {
+      document.getElementById("lname").value = "";
+      document.getElementById("lname").style.border = "red 2px solid";
+      document.getElementById("spanlname").style.display = "block";
+    }
+    if (!checkZipCode(zipcode)) {
+      document.getElementById("zip").value = "";
+      document.getElementById("zip").style.border = "red 2px solid";
+      document.getElementById("spanzip").style.display = "block";
+    }
+    if (languages == "") {
+      document.getElementById("lang").style.border = "red 2px solid";
+      document.getElementById("spanlanguages").style.display = "block";
+    }
+    if (country == "") {
+      document.getElementById("country").style.border = "red 2px solid";
+      document.getElementById("spancountry").style.display = "block";
+    }
   }
 }
+
+const passwordValid = () => {
+  const password = document.getElementById("pwd").value;
+  const passwordConfirm = document.getElementById("confirm-pwd").value;
+  console.log(checkPassword(password));
+  if (checkPassword(password) && passwordConfirm == password) {
+    document.getElementById("password-form").submit();
+  }
+  if (!checkPassword(password)) {
+    document.getElementById("pwd").value = "";
+    document.getElementById("confirm-pwd").value = "";
+    document.getElementById("pwd").style.border = "red 2px solid";
+    document.getElementById("spanpassword").style.display = "block";
+    return;
+  }
+  if (password != passwordConfirm) {
+    document.getElementById("pwd").style.border = "";
+    document.getElementById("spanpassword").style.display = "none";
+    document.getElementById("confirm-pwd").value = "";
+    document.getElementById("confirm-pwd").style.border = "red 2px solid";
+    document.getElementById("spanconfirm").style.display = "block";
+  }
+};
