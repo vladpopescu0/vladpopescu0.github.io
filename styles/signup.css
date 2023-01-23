@@ -35,7 +35,7 @@
     /* background-color: grey; */
 }
 
-#signup-form {
+#signup-data-form {
     position: absolute;
     box-sizing: border-box;
     width: 100%;
@@ -53,7 +53,7 @@
     align-items:baseline;
 }
 
-#signup-form input, #signup-form textarea {
+#signup-data-form input, #signup-data-form textarea {
     width: 100%;
     margin-top: 2%;
     /* margin-left: 2%; */
