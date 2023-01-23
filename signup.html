@@ -56,12 +56,12 @@
 
                                 <div style="grid-column-start:1; grid-column-end:2; grid-row-start: 2; grid-row-end: 3;">
                                     <label for="name">First Name: </label><br>
-                                    <input type="text" name="name" id="name" placeholder="First Name"><br>
+                                    <input type="text" name="name" id="fname" placeholder="First Name"><br>
                                 </div>
 
                                 <div style="grid-column-start:2; grid-column-end:3; grid-row-start: 2; grid-row-end: 3;">
                                     <label for="name">Last Name: </label><br>
-                                    <input type="text" name="name" id="name" placeholder="Last Name"><br>
+                                    <input type="text" name="name" id="lname" placeholder="Last Name"><br>
                                 </div>
                                 
                                 <div style="grid-column-start:1; grid-column-end:3; grid-row-start: 3; grid-row-end: 4;">
@@ -94,17 +94,17 @@
                                     <label>Gender: </label><br><br>
                                     <div style="display: flex; flex-direction: row; justify-content: space-around; align-content: space-around;font-size: 1.36vw;">
                                         <div>
-                                            <input type="radio" name="sexType" id="sexm" style="height: 2vh; width: fit-content; display: inline-block;">
+                                            <input type="radio" name="sexType" id="sexm" style="height: 2vh; width: fit-content; display: inline-block;" value="1">
                                             <label for="sexm" style="display:inline-block;">Male</label>
                                         </div>
 
                                         <div>
-                                            <input type="radio" name="sexType" id="sexf" style="height: 2vh; width: fit-content; display: inline-block;">
+                                            <input type="radio" name="sexType" id="sexf" style="height: 2vh; width: fit-content; display: inline-block;" value="2" checked>
                                             <label for="sexf">Female</label>
                                         </div>
 
                                         <div>
-                                            <input type="radio" name="sexType" id="sexo" style="height: 2vh; width: fit-content; display: inline-block;">
+                                            <input type="radio" name="sexType" id="sexo" style="height: 2vh; width: fit-content; display: inline-block;" value="3">
                                             <label for="sexo">Other</label>
                                         </div>
                                     </div>
@@ -158,7 +158,7 @@
                                 <!-- <label for="">TODO: implement additional driver details</label> -->
                                 <br>
                                 <div>
-                                    <button id="logincontinue" type="submit" onclick="checkAndDisplay()"> Continue </button>
+                                    <button id="logincontinue" type="button"> Continue </button>
                                 </div>
                             </div>
                         </div>
