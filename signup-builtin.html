@@ -14,9 +14,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap" rel="stylesheet">
 
         <title>CarYe - Signup</title>
-        <script src="./scripts/regexAssignment.js">
-            
-        </script>
+        <script src="./scripts/regexAssignment.js"></script>
+
         <style>
             body {
                 background-color:#2E3440;
@@ -156,12 +155,20 @@
                                 </div>
                                 <br>
                                 <div style="transition: ease-in-out 0.3s;">
-                                    <button id="logincontinue" type="submit" > Continue </button>
+                                    <button id="logincontinue" type="button" onclick="displayTrackingInfo()"> Continue </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+                <!-- ----------------------- TRACKING DIV ---------------------->
+                <div id="tracking-info" style="position: absolute; visibility: hidden; z-index: 100; background-color: white; color: #2E3440; font-size: 2vw; padding: 2%;" class="centered-container">
+                    <div id="tracking-text"></div>
+                    <button id="pass-continue" type="submit" style="font-size: 2vw;"> Continue to password screen</button>
+                </div>
+                <!-- ----------------------- TRACKING DIV ---------------------->
             </form>
 
             <div id="password-screen" style="position:absolute; left:100vw; width:100%; height:100%; background-color: #2E3440; display:inline-block">
@@ -204,4 +211,7 @@
             }
         });
     </script>
+
+    <script src="./scripts/tracker.js"></script>
+
 </html>
