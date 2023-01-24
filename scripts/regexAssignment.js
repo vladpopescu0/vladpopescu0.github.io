@@ -1,3 +1,7 @@
+//!!The regex part of the assignment is similar to the javascript in order to keep the design the same for both.
+//!!Instead of using the javascript function which return true or false,
+//we used RegExp.test(String string) which returns true if the regex matches the string
+
 let userIDReg = /^[A-Z].{3,10}(\d|\W)$/;
 //must start with a capital letter, followed by 3 to 10 characters and ending with a digit or a special character
 let passwordReg = /.{12,}/; //any character at least 12 times
@@ -6,10 +10,11 @@ let nameReg = /^[A-Za-z]+$/;
 let zipCodeReg = /^[0-9]{4,4}[A-Za-z]{2,2}$/;
 //the first 4 characters are digits and the last 2 are letters
 let emailReg =
-  /^([A-Za-z0-9]{1,1})([A-Za-z0-9\.\-\_]{3,})([A-Za-z0-9]{1,1})@([A-Za-z0-9]{1,1})([a-zA-Z0-9\.\-]{2,})([A-Za-z0-9]{1,1})\.([a-z]{2,})$/;
+  /^([A-Za-z0-9]{1,1})([A-Za-z0-9\.\-\_]{1,})([A-Za-z0-9]{1,1})@([A-Za-z0-9]{1,1})([a-zA-Z0-9\.\-]{1,})([A-Za-z0-9]{1,1})\.([a-z]{2,})$/;
 //the first and last chars of the username and of the domain must be letters or numbers ([A-Za-z0-9]{1,1})
 //supported characters for the local-part among letters and digits are hyphens, dots and underscores
 //cannot check whether there are 2 consecutive hyphens, underscores or dots
+
 document.addEventListener("DOMContentLoaded", function () {
   document
     .getElementById("birthday")
@@ -21,153 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("submit-new-acc")
     .addEventListener("click", passwordValid);
 });
-let alphabetBig = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let alphabetSmall = alphabetBig.toLowerCase();
-let specialCharacter = "~`!@#$%^&*()-_+={}[]|/:;'<>,.?";
-let invEmailCharacters = "~`!@#$%^&*()+={}[]|/:;'<>,?";
-let numbers = "0123456789";
-
-const checkUserID = (value) => {
-  if (alphabetBig.indexOf(value.charAt(0)) == -1) {
-    return false;
-  }
-  if (value.length < 5 || value.length > 12) {
-    return false;
-  }
-  if (
-    numbers.indexOf(value.charAt(value.length - 1)) == -1 &&
-    specialCharacter.indexOf(value.charAt(value.length - 1)) == -1 &&
-    value.charAt(value.length - 1) != '"'
-  ) {
-    return false;
-  }
-
-  return true;
-};
-
-const checkPassword = (value) => {
-  let good = "ok";
-  let howMany = 1;
-  let splitted = value.split("");
-  if (value.length < 12) {
-    return false;
-  }
-  for (var character of splitted) {
-    if (alphabetBig.indexOf(character) != -1) {
-      if (howMany % 2 != 0) {
-        howMany = howMany * 2;
-      }
-    }
-    if (alphabetSmall.indexOf(character) != -1) {
-      if (howMany % 3 != 0) {
-        howMany = howMany * 3;
-      }
-    }
-    if (numbers.indexOf(character) != -1) {
-      if (howMany % 5 != 0) {
-        howMany = howMany * 5;
-      }
-    }
-    if (specialCharacter.indexOf(character) != -1 || character == '"') {
-      if (howMany % 7 != 0) {
-        howMany = howMany * 7;
-      }
-    }
-  }
-  if (howMany != 210) {
-    return false;
-  }
-  if (value.length >= 14) {
-    good = "better";
-  }
-  return good;
-};
-
-const checkName = (value) => {
-  if (value == "") {
-    return false;
-  }
-  let splitted = value.split("");
-  for (var character of splitted) {
-    if (
-      numbers.indexOf(character) != -1 ||
-      specialCharacter.indexOf(character) != -1 ||
-      character == '"'
-    ) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const checkZipCode = (value) => {
-  if (value.length != 6) {
-    console.log("lopa");
-    console.log(value.length);
-    return false;
-  }
-  if (
-    typeof parseInt(value.substring(0, 4)) != "number" || //it must be possible to be parsed and all 4 characters must be digits
-    parseInt(value.substring(0, 4)) < 1000
-  ) {
-    console.log(parseInt(value.substring(0, 4)));
-    return false;
-  }
-  var lastTwo = value.substring(4, 6).toLowerCase();
-  if (
-    alphabetSmall.indexOf(lastTwo.charAt(0)) == -1 || //the last to characters must be letters
-    alphabetSmall.indexOf(lastTwo.charAt(1)) == -1
-  ) {
-    console.log("ugabuga");
-    return false;
-  }
-  return true;
-};
-
-const checkEmail = (value) => {
-  var splitted = value.split("@");
-  console.log(splitted);
-  if (splitted.length != 2) {
-    return false;
-  }
-  for (var character of splitted[0].split("")) {
-    if (invEmailCharacters.indexOf(character) != -1) {
-      //only valid characters
-      return false;
-    }
-  }
-  for (var character of splitted[1].split("")) {
-    if ((invEmailCharacters + "_").indexOf(character) != -1) {
-      //only valid characters
-      return false;
-    }
-  }
-  if (
-    splitted[1].split(".")[splitted[1].split(".").length - 1].indexOf("-") != //if the top-level domain contains hyphens or is too short return false
-      -1 &&
-    splitted[1].split(".")[splitted[1].split(".").length - 1].length < 2
-  ) {
-    return false;
-  }
-
-  if (
-    splitted[0].split("")[0] == "-" ||
-    splitted[0].split("")[0] == "." || //if first char is ".", "-" or "_" return false
-    splitted[0].split("")[0] == "_"
-  ) {
-    return false;
-  }
-  if (
-    splitted[0].split("")[splitted[0].split("").length - 1] == "-" ||
-    splitted[0].split("")[splitted[0].split("").length - 1] == "." || //if last char is ".", "-" or "_" return false
-    splitted[0].split("")[splitted[0].split("").length - 1] == "_"
-  ) {
-    return false;
-  }
-  return true;
-};
 function checkAndDisplay() {
-  console.log("ceva");
   var zipcode = document.getElementById("zip")?.value;
   var username = document.getElementById("username")?.value;
   var email = document.getElementById("email")?.value;
@@ -191,19 +50,12 @@ function checkAndDisplay() {
   } else {
     gender = "Other";
   }
-  console.log(
-    checkName(fName).toString() +
-      checkName(lName).toString() +
-      checkUserID(username).toString() +
-      checkZipCode(zipcode).toString() +
-      checkEmail(email).toString()
-  );
   if (
-    checkName(fName) &&
-    checkName(lName) &&
-    checkUserID(username) &&
-    checkZipCode(zipcode) &&
-    checkEmail(email) &&
+    nameReg.test(fName) &&
+    nameReg.test(lName) &&
+    userIDReg.test(username) &&
+    zipCodeReg.test(zipcode) &&
+    emailReg.test(email) &&
     languages != "" &&
     country != ""
   ) {
@@ -239,27 +91,27 @@ function checkAndDisplay() {
     document.getElementById("signup-form").submit();
     //location.href = "#password-screen";
   } else {
-    if (!checkEmail(email)) {
+    if (!emailReg.test(email)) {
       document.getElementById("email").value = "";
       document.getElementById("email").style.border = "red 2px solid";
       document.getElementById("spanemail").style.display = "block";
     }
-    if (!checkUserID(username)) {
+    if (!userIDReg.test(username)) {
       document.getElementById("username").value = "";
       document.getElementById("username").style.border = "red 2px solid";
       document.getElementById("spanusername").style.display = "block";
     }
-    if (!checkName(fName)) {
+    if (!nameReg.test(fName)) {
       document.getElementById("fname").value = "";
       document.getElementById("fname").style.border = "red 2px solid";
       document.getElementById("spanfname").style.display = "block";
     }
-    if (!checkName(lName)) {
+    if (!nameReg.test(lName)) {
       document.getElementById("lname").value = "";
       document.getElementById("lname").style.border = "red 2px solid";
       document.getElementById("spanlname").style.display = "block";
     }
-    if (!checkZipCode(zipcode)) {
+    if (!zipCodeReg.test(zipcode)) {
       document.getElementById("zip").value = "";
       document.getElementById("zip").style.border = "red 2px solid";
       document.getElementById("spanzip").style.display = "block";
@@ -278,11 +130,10 @@ function checkAndDisplay() {
 const passwordValid = () => {
   const password = document.getElementById("pwd").value;
   const passwordConfirm = document.getElementById("confirm-pwd").value;
-  console.log(checkPassword(password));
-  if (checkPassword(password) && passwordConfirm == password) {
+  if (passwordReg.test(password) && passwordConfirm == password) {
     document.getElementById("password-form").submit();
   }
-  if (!checkPassword(password)) {
+  if (!passwordReg.test(password)) {
     document.getElementById("pwd").value = "";
     document.getElementById("confirm-pwd").value = "";
     document.getElementById("pwd").style.border = "red 2px solid";
