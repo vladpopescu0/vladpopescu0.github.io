@@ -7,10 +7,19 @@ let totalCharactersTyped = 0;   // since a long press is processed as several do
                                 // of characters typed and the 'keypress' event
 let startTime = new Date();
 
+// variable for built in verification
+let passContinue = false;
+
 // main function
 function displayTrackingInfo() {
-    let infodiv = document.getElementById("tracking-info");
-    let infotext = document.getElementById("tracking-text");
+    let infodiv, infotext;
+    if (!passContinue) {
+        infodiv = document.getElementById("tracking-info1");
+        infotext = document.getElementById("tracking-text1");
+    } else {
+        infodiv = document.getElementById("tracking-info2");
+        infotext = document.getElementById("tracking-text2");
+    }
     infodiv.style.visibility = "visible";
 
     let time = millisToReadable(calcElapsedTime(startTime)); // currently gives the time the page was open
@@ -18,6 +27,8 @@ function displayTrackingInfo() {
                         + "<br>Time page open: " + time 
                         + "<br>Total key presses: " + totalKeyPresses
                         + "<br>Total charcaters typed: " + totalCharactersTyped;
+    
+    return passContinue;
 }
 
 // event listener functions
@@ -39,6 +50,17 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log("keyp = " + totalKeyPresses);
         })
     }
+
+    // this (code) can be cleaned up
+    document.getElementById('pass-continue').addEventListener('click', () => {
+        passContinue = true;
+        console.log("pass");
+    })
+
+    document.getElementById('submit-new-acc').addEventListener('click', () => {
+        passContinue = true;
+        console.log("pass");
+    })
 });
 
 // helper functions

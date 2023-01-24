@@ -141,25 +141,23 @@
                             <div id="driver-form" class="form">
                                 <div style="display: flex; flex-direction: row; justify-content: space-around; font-size: 1.9vw;">
                                     <div>
-                                        <input type="radio" name="passenger" id="passenger" checked>
+                                        <input type="checkbox" name="passenger" id="passenger" checked>
                                         <label for="passenger">Passenger</label><br>
                                     </div>
 
                                     <div>
-                                        <input type="radio" name="passenger" id="driver">
+                                        <input type="checkbox" name="passenger" id="driver">
                                         <label for="driver">Driver</label> <br>
                                     </div>
                                 </div>
                                 <br>
-                                <div>
-                                    <p>[this should only be visible if driver is selected]</p>
+                                <div id="licence-input" style="visibility: hidden; opacity: 0; height: 0; transition: ease-in-out 0.3s;">
+                                    <!-- <p>[this should only be visible if driver is selected]</p> -->
                                     <label for="flicence">Front of licence</label> <br>
                                     <input type="file" name="flicence" id="flicence"><br>
-                                    <!-- <input type="image" src="" alt="Front of licence"> <br> -->
 
                                     <label for="blicence">Back of licence</label> <br>
                                     <input type="file" name="blicence" id="blicence"><br>
-                                    <!-- <input type="image" src="" alt="Back of driver license"> -->
                                 </div>
                                 <!-- <br> -->
                                 <!-- <label for="">TODO: implement additional driver details</label> -->
@@ -195,7 +193,21 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </body>
+
+    <script>
+        document.getElementById("driver").addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById("licence-input").style.visibility = "visible"
+                document.getElementById("licence-input").style.opacity = "100%"
+                document.getElementById("licence-input").style.height = "fit-content"
+            } else {
+                document.getElementById("licence-input").style.opacity = "0"
+                document.getElementById("licence-input").style.height = "0"
+                document.getElementById("licence-input").style.visibility = "hidden"
+
+            }
+        });
+    </script>
 </html>

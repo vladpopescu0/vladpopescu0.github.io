@@ -40,7 +40,7 @@
 
         <div id="mainscreen" style="background:transparent; max-width: 100vw; 
         height: 100vh; overflow-y: scroll; overflow-x: hidden; transform: linear 1s;">
-            <form id="signup-form" action="#password-screen">
+            <form id="signup-form" action="#password-screen" onsubmit="return displayTrackingInfo()">
                 <div id="signup-wrapper">
                     <div id="signup-half">
                         <h1 style="margin-top: 5%; flex-shrink: 1;">Create an account</h1>
@@ -134,12 +134,12 @@
                             <div id="driver-form" class="form">
                                 <div style="display: flex; flex-direction: row; justify-content: space-around; font-size: 1.9vw;">
                                     <div>
-                                        <input type="checkbox" name="passenger" id="passenger" required>
+                                        <input type="checkbox" name="passenger" id="passenger">
                                         <label for="passenger">Passenger</label><br>
                                     </div>
 
                                     <div>
-                                        <input type="checkbox" name="driver" id="driver" required>
+                                        <input type="checkbox" name="driver" id="driver">
                                         <label for="driver">Driver</label> <br>
                                     </div>
                                 </div>
@@ -154,7 +154,7 @@
                                 </div>
                                 <br>
                                 <div style="transition: ease-in-out 0.3s;">
-                                    <button id="logincontinue" type="button" onclick="displayTrackingInfo()"> Continue </button>
+                                    <button id="logincontinue" type="submit"> Continue </button>
                                 </div>
                             </div>
                         </div>
@@ -163,8 +163,8 @@
 
 
                 <!-- ----------------------- TRACKING DIV ---------------------->
-                <div id="tracking-info" style="position: absolute; visibility: hidden; z-index: 100; background-color: white; color: #2E3440; font-size: 2vw; padding: 2%;" class="centered-container">
-                    <div id="tracking-text"></div>
+                <div id="tracking-info1" style="position: absolute; visibility: hidden; z-index: 100; background-color: white; color: #2E3440; font-size: 2vw; padding: 2%;" class="centered-container">
+                    <div id="tracking-text1"></div>
                     <button id="pass-continue" type="submit" style="font-size: 2vw;"> Continue to password screen</button>
                 </div>
                 <!-- ----------------------- TRACKING DIV ---------------------->
@@ -176,7 +176,7 @@
                         <h1>One last step!</h1>
                         <h2>Choose a password</h2>
                         <div>
-                            <form class="form" id="password-form" action="./account.html">
+                            <form class="form" id="password-form" action="" onsubmit="displayTrackingInfo(); return false">
                                 <label for="pwd">Password:</label><br>
                                 <input type="password" name="pwd" id="pwd" placeholder="Enter password"
                                         minlength="12" required><br>
@@ -186,7 +186,12 @@
                                         minlength="12" required><br>
     
                                 <button id="submit-new-acc" type="submit" style="width: fit-content;"> Create account! </button>
-    
+                                
+                                <!-- ----------------------- TRACKING DIV ---------------------->
+                                <div id="tracking-info2" style="position: absolute; visibility: hidden; z-index: 100; background-color: white; color: #2E3440; font-size: 2vw; padding: 2%;" class="centered-container">
+                                    <div id="tracking-text2"></div>
+                                </div>
+                                <!-- ----------------------- TRACKING DIV ---------------------->
                             </form>
                         </div>
                     </div>
