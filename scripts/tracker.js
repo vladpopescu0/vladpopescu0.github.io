@@ -1,7 +1,10 @@
 // counters
-let totalClicks = 0;
-let totalKeyPresses = 0;
-let totalCharactersTyped = 0;
+let totalClicks = 0; // all clicks on the entire page
+let totalKeyPresses = 0;    // every time a key is pressed - since holding a key down is read as
+                            // the same number of presses as characters typed and we want to count a long press asa a single press,
+                            // this corresponds to the 'keyup' event 
+let totalCharactersTyped = 0;   // since a long press is processed as several down presses, this corresponds to the 
+                                // of characters typed and the 'keypress' event
 let startTime = new Date();
 
 // main function
@@ -11,13 +14,31 @@ function displayTrackingInfo() {
     infodiv.style.visibility = "visible";
 
     let time = millisToReadable(calcElapsedTime(startTime)); // currently gives the time the page was open
-    infotext.innerHTML = "Total clicks: " + totalClicks + "<br>Time page open: " + time;
+    infotext.innerHTML = "Total clicks: " + totalClicks 
+                        + "<br>Time page open: " + time 
+                        + "<br>Total key presses: " + totalKeyPresses
+                        + "<br>Total charcaters typed: " + totalCharactersTyped;
 }
 
 // event listener functions
-document.body.addEventListener('click', function() {
-    totalClicks++;
-    console.log(totalClicks);
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.addEventListener('click', function() {
+        totalClicks++;
+        console.log("clicks = " + totalClicks);
+    });
+
+    var inputFields = document.getElementsByTagName('input');
+    for (var i = 0; i < inputFields.length; i++) {
+        inputFields[i].addEventListener('keypress', () => {
+            totalCharactersTyped++;
+            console.log("char = " + totalCharactersTyped);
+        });
+
+        inputFields[i].addEventListener('keyup', () => {
+            totalKeyPresses++;
+            console.log("keyp = " + totalKeyPresses);
+        })
+    }
 });
 
 // helper functions
