@@ -43,15 +43,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var inputFields = document.getElementsByTagName('input');
     for (var i = 0; i < inputFields.length; i++) {
-        inputFields[i].addEventListener('keypress', () => {
-            totalCharactersTyped++;
-            console.log("char = " + totalCharactersTyped);
-        });
+        inputFields[i].addEventListener('keypress', incCharacterCount);
 
-        inputFields[i].addEventListener('keyup', () => {
-            totalKeyPresses++;
-            console.log("keyp = " + totalKeyPresses);
-        })
+        inputFields[i].addEventListener('keyup', incKeyPressed);
+    }
+
+    var textAreaFields = document.getElementsByTagName('textarea');
+    for (var i = 0; i < textAreaFields.length; i++) {
+        textAreaFields[i].addEventListener('keypress', incCharacterCount);
+
+        textAreaFields[i].addEventListener('keyup', incKeyPressed);
     }
 
     // this (code) can be cleaned up
@@ -67,6 +68,16 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // helper functions
+function incKeyPressed() {
+    totalKeyPresses++;
+    console.log("keyp = " + totalKeyPresses);
+}
+
+function incCharacterCount() {
+    totalCharactersTyped++;
+    console.log("char = " + totalCharactersTyped);
+}
+
 function calcElapsedTime(start) {
     let end = new Date();
     return end.getTime() - start.getTime();;
