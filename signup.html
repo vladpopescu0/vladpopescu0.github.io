@@ -42,7 +42,7 @@
 
         <div id="mainscreen" style="background:transparent; max-width: 100vw; 
         height: 100vh; overflow-y: scroll; overflow-x: hidden; transform: linear 1s;">
-            <form id="signup-form" action="#password-screen">
+            <form id="signup-form" action="#password-screen" onsubmit="if(checkAndDisplay()) return displayTrackingInfo(); else return false;">
                 <div id="signup-wrapper">
                     <div id="signup-half">
                         <h1 style="margin-top: 5%; flex-shrink: 1;">Create an account</h1>
@@ -50,19 +50,19 @@
                             <div id="signup-data-form" class="form">
                                 <!-- left column -->
                                 <div style="grid-column-start:1; grid-column-end:3; grid-row-start: 1; grid-row-end: 2;">
-                                    <label for="uname">Username: </label><br>
+                                    <label for="uname">*Username: </label><br>
                                     <input type="text" id="username" name="uname" placeholder="Username"><br>
                                     <span style="font-size:smaller; align-self: left; display: none; color:brown"  id="spanusername">Username is invalid</span>
                                 </div>
 
                                 <div style="grid-column-start:1; grid-column-end:2; grid-row-start: 2; grid-row-end: 3;">
-                                    <label for="name">First Name: </label><br>
+                                    <label for="name">*First Name: </label><br>
                                     <input type="text" name="name" id="fname" placeholder="First Name"><br>
                                     <span style="font-size:smaller; align-self: left; display: none; color:brown"  id="spanfname">First Name is invalid</span>
                                 </div>
 
                                 <div style="grid-column-start:2; grid-column-end:3; grid-row-start: 2; grid-row-end: 3;">
-                                    <label for="name">Last Name: </label><br>
+                                    <label for="name">*Last Name: </label><br>
                                     <input type="text" name="name" id="lname" placeholder="Last Name"><br>
                                     <span style="font-size:smaller; align-self: left; display: none; color:brown"  id="spanlname">Last Name is invalid</span>
                                 </div>
@@ -73,7 +73,7 @@
                                 </div>
 
                                 <div style="grid-column-start:1; grid-column-end:2; grid-row-start: 4; grid-row-end: 5;">
-                                    <label for="country">Country: </label><br>
+                                    <label for="country">*Country: </label><br>
                                     <input type="text" name="country" id="country" placeholder="Country"><br>
                                     <span style="font-size:smaller; align-self: left; display: none; color:brown"  id="spancountry">Country is required</span>
                                 </div>
@@ -85,20 +85,20 @@
                                 </div>
 
                                 <div style="grid-column-start:1; grid-column-end:3; grid-row-start: 5; grid-row-end: 6;">
-                                    <label for="zip">Spoken Language(s):</label><br>
+                                    <label for="zip">*Spoken Language(s):</label><br>
                                     <input type="text" name="lang" id="lang" placeholder="Language 1, Language 2"><br>
                                     <span style="font-size:smaller; align-self: left; display: none; color:brown" id="spanlanguages">Language is required</span>
                                 </div>
 
                                 <!-- right column -->
                                 <div style="grid-column-start: 3; grid-column-end: 4; grid-row-start: 1; grid-row-end: 2;">
-                                    <label for="email">Email: </label><br>
+                                    <label for="email">*Email: </label><br>
                                     <input type="email" name="email" id="email" placeholder="email@domain.ex"><br>
                                     <span style="font-size:smaller; align-self: left; display: none; color:brown"  id="spanemail">Email is invalid</span>
                                 </div>
 
                                 <div style="grid-column-start: 3; grid-column-end:4; grid-row-start: 2; grid-row-end: 3;">
-                                    <label>Gender: </label><br><br>
+                                    <label>*Gender: </label><br><br>
                                     <div style="display: flex; flex-direction: row; justify-content: space-around; align-content: space-around;font-size: 1.36vw;">
                                         <div>
                                             <input type="radio" name="sexType" id="sexm" style="height: 2vh; width: fit-content; display: inline-block;" value="1">
@@ -128,11 +128,9 @@
                                     <!-- <input type="text" name="bio" id="bio" style="height: 14vh;"><br> -->
                                 </div>
                                 
-                                <!-- <div style="grid-column-start:1; grid-column-end:6; grid-row-start: 6; grid-row-end: 7;">
-                                    <button id="logincontinue" type="submit" style="margin-top: 0;"> Continue </button>
-                                </div> -->
                             </div>
                         </div>
+                        <h2 style="font-size: 0.9vw;">* = required field</h2>
                     </div>
     
                     <div id="driver-half">
@@ -159,16 +157,21 @@
                                     <label for="blicence">Back of licence</label> <br>
                                     <input type="file" name="blicence" id="blicence"><br>
                                 </div>
-                                <!-- <br> -->
-                                <!-- <label for="">TODO: implement additional driver details</label> -->
                                 <br>
                                 <div>
-                                    <button id="logincontinue" type="button"> Continue </button>
+                                    <button id="logincontinue" type="submit"> Continue </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- ----------------------- TRACKING DIV ---------------------->
+                <div id="tracking-info1" style="position: absolute; visibility: hidden; z-index: 100; background-color: white; color: #2E3440; font-size: 2vw; padding: 2%;" class="centered-container">
+                    <div id="tracking-text1"></div>
+                    <button id="pass-continue" type="submit" style="font-size: 2vw;"> Continue to password screen</button>
+                </div>
+                <!-- ----------------------- TRACKING DIV ---------------------->
             </form>
 
             <div id="password-screen" style="position:absolute; left:100vw; width:100%; height:100%; background-color: #2E3440; display:inline-block">
@@ -177,7 +180,7 @@
                         <h1>One last step!</h1>
                         <h2>Choose a password</h2>
                         <div>
-                            <form class="form" id="password-form" action="./account.html">
+                            <form class="form" id="password-form" action="" onsubmit="if(passwordValid()) displayTrackingInfo(); return false">
                                 <label for="pwd">Password:</label><br>
                                 <input type="password" name="pwd" id="pwd" placeholder="Enter password"><br>
                                 <span style="font-size:smaller; align-self: left; display: none; color:brown; padding-bottom: 5%;" id="spanpassword">Password must contain at least 12 letters, both lower and uppercase, numbers and special characters</span>
@@ -186,8 +189,13 @@
                                 <input type="password" name="confirm-pwd" id="confirm-pwd" placeholder="Repeat password"><br>
                                 <span style="font-size:smaller; align-self: left; display: none; color:brown; padding-bottom: 5%;" id="spanconfirm">Passwords do not match </span>
     
-                                <button id="submit-new-acc" type="button" style="width: fit-content;"> Create account! </button>
-    
+                                <button id="submit-new-acc" type="submit" style="width: fit-content;"> Create account! </button>
+                                
+                                <!-- ----------------------- TRACKING DIV ---------------------->
+                                <div id="tracking-info2" style="position: absolute; visibility: hidden; z-index: 100; background-color: white; color: #2E3440; font-size: 1.5vw; padding: 2%;" class="centered-container">
+                                    <div id="tracking-text2"></div>
+                                </div>
+                                <!-- ----------------------- TRACKING DIV ---------------------->
                             </form>
                         </div>
                     </div>
@@ -210,4 +218,6 @@
             }
         });
     </script>
+
+    <script src="./scripts/tracker.js"></script>
 </html>

@@ -12,6 +12,7 @@ let passContinue = false;
 
 // main function
 function displayTrackingInfo() {
+    console.log("tracking info called");
     let infodiv, infotext;
     if (!passContinue) {
         infodiv = document.getElementById("tracking-info1");
@@ -33,6 +34,8 @@ function displayTrackingInfo() {
 
 // event listener functions
 document.addEventListener("DOMContentLoaded", function() {
+    console.log("display info div " + passContinue);
+
     document.body.addEventListener('click', function() {
         totalClicks++;
         console.log("clicks = " + totalClicks);

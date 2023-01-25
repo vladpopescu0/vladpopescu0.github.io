@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .getElementById("birthday")
     .setAttribute("max", new Date().toISOString().split("T")[0]);
-  document
-    .getElementById("logincontinue")
-    .addEventListener("click", checkAndDisplay);
-  document
-    .getElementById("submit-new-acc")
-    .addEventListener("click", passwordValid);
+  // document
+  //   .getElementById("logincontinue")
+  //   .addEventListener("click", checkAndDisplay);
+  // document
+  //   .getElementById("submit-new-acc")
+  //   .addEventListener("click", passwordValid);
 });
 let alphabetBig = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let alphabetSmall = alphabetBig.toLowerCase();
@@ -224,8 +224,9 @@ function checkAndDisplay() {
         (date != "" ? "Birthday: " + date + "\n" : "") +
         (about != "" ? "Bio: " + about + "\n" : "")
     );
-    document.getElementById("signup-form").submit();
+    // document.getElementById("signup-form").submit();
     //location.href = "#password-screen";
+    return true;
   } else {
     if (!checkEmail(email)) {
       document.getElementById("email").value = "";
@@ -260,6 +261,7 @@ function checkAndDisplay() {
       document.getElementById("country").style.border = "red 2px solid";
       document.getElementById("spancountry").style.display = "block";
     }
+    return false;
   }
 }
 
@@ -268,14 +270,15 @@ const passwordValid = () => {
   const passwordConfirm = document.getElementById("confirm-pwd").value;
   console.log(checkPassword(password));
   if (checkPassword(password) && passwordConfirm == password) {
-    document.getElementById("password-form").submit();
+    // document.getElementById("password-form").submit();
+    return true;
   }
   if (!checkPassword(password)) {
     document.getElementById("pwd").value = "";
     document.getElementById("confirm-pwd").value = "";
     document.getElementById("pwd").style.border = "red 2px solid";
     document.getElementById("spanpassword").style.display = "block";
-    return;
+    return false;
   }
   if (password != passwordConfirm) {
     document.getElementById("pwd").style.border = "";
@@ -284,4 +287,5 @@ const passwordValid = () => {
     document.getElementById("confirm-pwd").style.border = "red 2px solid";
     document.getElementById("spanconfirm").style.display = "block";
   }
+  return false;
 };
